@@ -60,7 +60,7 @@ export const Navbar: React.FC<IProps> = () => {
     return <nav className={s.navbar}>
         {navLinks.map((item: INavLink) => <NavLink className={s.item} to={item.to} key={item.label}>
             <img src={item.src} alt={item.alt} className={s.itemIcon}/>
-            {item.label}
+            <span className={s.label}>{item.label}</span>
         </NavLink>)}
     </nav>
 }
