@@ -1,11 +1,16 @@
+.headerContainer {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: white;
+}
+
 .header {
     justify-content: space-between;
     align-items: center;
     display: flex;
     height: 48px;
-    max-width: 1076px;
-    margin: 0 auto;
-    padding: 0 15px;
 }
 
 .sectionLeft {
@@ -16,6 +21,11 @@
 .sectionRight {
     align-items: center;
     display: flex;
+    height: 48px;
+    padding-left: 10px;
+    &:hover {
+         background-color: #f5f6f8;
+     }
 }
 
 .logo {
