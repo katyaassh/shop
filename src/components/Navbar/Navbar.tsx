@@ -6,6 +6,7 @@ import message from "./../../assets/icons/message.svg"
 import friends from "./../../assets/icons/friends.svg"
 import groups from "./../../assets/icons/groups.svg"
 import photos from "./../../assets/icons/photos.svg"
+import React from "react";
 
 interface INavLink {
     src: string
@@ -53,7 +54,9 @@ const navLinks: INavLink[] = [
     }
 ]
 
-export const Navbar = () => {
+interface IProps {}
+
+export const Navbar: React.FC<IProps> = () => {
     return <nav className={s.navbar}>
         {navLinks.map((item: INavLink) => <NavLink className={s.item} to={item.to} key={item.label}>
             <img src={item.src} alt={item.alt} className={s.itemIcon}/>
