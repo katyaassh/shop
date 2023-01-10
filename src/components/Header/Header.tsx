@@ -1,21 +1,27 @@
-import logo from '../../assets/image/logo.svg'
-import search from '../../assets/image/search.svg'
+import logo from '../../assets/icons/logo.svg'
+import search from '../../assets/icons/search.svg'
 import avatar from '../../assets/image/avatar.jpg'
-import chevron_down from '../../assets/image/chevron-down.svg'
+import chevron from '../../assets/icons/chevron-down.svg'
 import s from './Header.module.css'
+import React from "react";
 
-export const Header = () => {
+interface IProps {
+
+}
+
+export const Header: React.FC<IProps> = () => {
+
     return <header className={s.header}>
-        <div className={s.header_left}>
-            <img src={logo} alt="" className={s.logo}/>
+        <div className={s.sectionLeft}>
+            <img src={logo} alt="ВКонтакте" className={s.logo}/>
             <div className={s.search}>
-                <img src={search} alt="" className={s.search_icon}/>
-                <p className={s.search_text}>Поиск</p>
+                <img src={search} alt="Search" className={s.searchIcon}/>
+                <span className={s.searchText}>Поиск</span>
             </div>
         </div>
-        <div className={s.header_right}>
-            <img src={avatar} alt="" className={s.avatar}/>
-            <img src={chevron_down} alt="" className={s.chevron_down}/>
+        <div className={s.sectionRight}>
+            <img src={avatar} alt="User name" className={s.avatar}/>
+            <img src={chevron} alt="Chevron" className={s.chevron}/>
         </div>
     </header>
 }
