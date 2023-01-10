@@ -8,14 +8,14 @@
     padding: 0 15px;
 }
 
-.sectionLeft{
-    display: flex;
+.sectionLeft {
     align-items: center;
+    display: flex;
 }
 
 .sectionRight {
-    display: flex;
     align-items: center;
+    display: flex;
 }
 
 .logo {
