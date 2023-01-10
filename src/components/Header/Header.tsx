@@ -1,10 +1,10 @@
-import logo from '../../assets/icons/logo.svg'
-import search from '../../assets/icons/search.svg'
-import avatar from '../../assets/image/avatar.jpg'
-import chevron from '../../assets/icons/chevron-down.svg'
-import s from './Header.module.scss'
+import logo from "../../assets/icons/logo.svg"
+import search from "../../assets/icons/search.svg"
+import avatar from "../../assets/image/avatar.jpg"
+import chevron from "../../assets/icons/chevron-down.svg"
+import s from "./Header.module.scss"
 import React from "react";
-import clsx from 'clsx'
+import clsx from "clsx"
 
 interface IProps {
 
