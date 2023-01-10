@@ -38,16 +38,18 @@ function App() {
                 <Header/>
                 <main className={clsx('container', s.main)}>
                     <Navbar/>
-                    <Suspense fallback={<div>loading...</div>}>
-                        <Routes>
-                            <Route path='/profile' element={<Profile/>}/>
-                            <Route path='/feed' element={<Feed/>}/>
-                            <Route path='/messages' element={<Messages/>}/>
-                            <Route path='/friends' element={<Friends/>}/>
-                            <Route path='/groups' element={<Groups/>}/>
-                            <Route path='/photos' element={<Photos/>}/>
-                        </Routes>
-                    </Suspense>
+                    <div className={s.content}>
+                        <Suspense fallback={<div>loading...</div>}>
+                            <Routes>
+                                <Route path='/profile' element={<Profile/>}/>
+                                <Route path='/feed' element={<Feed/>}/>
+                                <Route path='/messages' element={<Messages/>}/>
+                                <Route path='/friends' element={<Friends/>}/>
+                                <Route path='/groups' element={<Groups/>}/>
+                                <Route path='/photos' element={<Photos/>}/>
+                            </Routes>
+                        </Suspense>
+                    </div>
                 </main>
             </div>
         </BrowserRouter>

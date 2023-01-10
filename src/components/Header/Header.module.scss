@@ -1,68 +1,90 @@
+@import "src/variables";
+
 .headerContainer {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    background-color: white;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background-color: white;
 }
 
 .header {
-    justify-content: space-between;
-    align-items: center;
-    display: flex;
-    height: 48px;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  height: 48px;
 }
 
 .sectionLeft {
-    align-items: center;
-    display: flex;
+  align-items: center;
+  display: flex;
 }
 
 .sectionRight {
-    align-items: center;
-    display: flex;
-    height: 48px;
-    padding-left: 10px;
-    &:hover {
-         background-color: #f5f6f8;
-     }
+  align-items: center;
+  display: flex;
 }
 
 .logo {
-    width: 136px;
-    height: 24px;
-    margin-right: 30px;
+  width: 136px;
+  height: 24px;
+  margin-right: 30px;
 }
 
 .search {
-    align-items: center;
-    display: flex;
-    width: 230px;
-    height: 32px;
-    border-radius: 7px;
-    background-color: #edeef0;
+  align-items: center;
+  display: flex;
+  width: 230px;
+  height: 32px;
+  border-radius: 7px;
+  background-color: #edeef0;
+  @media (max-width: $mobile) {
+    display: none;
+  }
 }
 
 .searchIcon {
-    width: 14px;
-    height: 14px;
-    margin: 0 10px;
+  width: 14px;
+  height: 14px;
+  margin: 0 10px;
 }
 
 .searchText {
-    color: #818c99;
-    font-size: 14px;
+  font-size: 14px;
+  color: #818c99;
+}
+
+.searchButton {
+  align-items: center;
+  display: none;
+  height: 32px;
+  border-radius: 7px;
+  background-color: #edeef0;
+  @media (max-width: $mobile) {
+    display: flex;
+  }
+}
+
+.user {
+  align-items: center;
+  display: flex;
+  height: 48px;
+  margin-left: 10px;
+
+  &:hover {
+    background-color: #f5f6f8;
+  }
 }
 
 .avatar {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    object-fit: cover;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .chevron {
-    width: 8px;
-    height: 4px;
-    margin: 0 8px 0 6px;
+  width: 8px;
+  height: 4px;
+  margin: 0 8px 0 6px;
 }
