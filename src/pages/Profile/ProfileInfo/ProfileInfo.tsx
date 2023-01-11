@@ -13,7 +13,7 @@ export const ProfileInfo: React.FC<IProps> = () => {
     return <div className={s.profileInfo}>
         <img src={avatar} alt="Avatar" className={s.avatar}/>
         <div className={s.wrapper}>
-            <div>
+            <div className={s.information}>
                 <span className={s.name}>Екатерина Гатина</span>
                 <div className={s.links}>
                     <NavLink to={'/search'} className={s.link}>
