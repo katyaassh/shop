@@ -3,7 +3,7 @@
 .navbar {
   flex-direction: column;
   display: flex;
-  width: 154px;
+  min-width: 154px;
 
   @media (max-width: $mobile) {
     position: fixed;
