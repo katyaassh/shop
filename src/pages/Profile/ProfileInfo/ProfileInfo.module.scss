@@ -1,0 +1,95 @@
+@import "src/variables";
+
+.profileInfo {
+  justify-content: space-between;
+  display: flex;
+  height: 150px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: white;
+
+  @media screen and (max-width: $tablet) {
+    flex-direction: column;
+    align-items: center;
+    height: 260px;
+    border-radius: 10px;
+  }
+
+  @media screen and (max-width: $mobile) {
+    border-radius: 0 0 10px 10px;
+  }
+}
+
+.avatar {
+  min-width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+
+  @media screen and (max-width: $tablet) {
+    width: 100px;
+    min-height: 100px;
+  }
+}
+
+.wrapper {
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  width: 100%;
+  margin-left: 16px;
+
+  @media screen and (max-width: $tablet) {
+    flex-direction: column;
+    margin: 0;
+  }
+}
+
+.information {
+  flex-direction: column;
+  display: flex;
+
+  @media screen and (max-width: $tablet) {
+    align-items: center;
+    margin-bottom: 10px;
+  }
+}
+
+.name {
+  font-size: 21px;
+  font-weight: 600;
+}
+
+.links {
+  display: flex;
+  margin-top: 6px;
+}
+
+.link {
+  align-items: center;
+  display: flex;
+  margin-right: 5px;
+  text-decoration: none;
+}
+
+.linkImg {
+  height: 22px;
+  width: 22px;
+}
+
+.linkText {
+  margin-left: 4px;
+  font-size: 13px;
+  color: $gray;
+}
+
+.button {
+  height: 32px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 7px;
+  font-weight: 600;
+  color: $blue;
+  background-color: $light-blue;
+  cursor: pointer;
+}
