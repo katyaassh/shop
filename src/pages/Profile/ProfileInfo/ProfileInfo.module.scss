@@ -41,6 +41,7 @@
 
   @media screen and (max-width: $tablet) {
     flex-direction: column;
+    margin: 0;
   }
 }
 
@@ -50,7 +51,7 @@
 
   @media screen and (max-width: $tablet) {
     align-items: center;
-    padding-bottom: 10px;
+    margin-bottom: 10px;
   }
 }
 
@@ -79,7 +80,7 @@
 .linkText {
   margin-left: 4px;
   font-size: 13px;
-  color: #626D7A;
+  color: $gray;
 }
 
 .button {
@@ -88,7 +89,7 @@
   border: 0;
   border-radius: 7px;
   font-weight: 600;
-  color: #346297;
-  background-color: #E5EBF1;
+  color: $blue;
+  background-color: $light-blue;
   cursor: pointer;
 }
