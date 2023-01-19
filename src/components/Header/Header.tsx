@@ -19,25 +19,29 @@ export const Header: React.FC<IProps> = () => {
             <div className={s.sectionLeft}>
                 <img src={menu} alt="Menu" className={s.menuIcon}/>
                 <div className={s.label}>Интернет магазин парфюмерии</div>
-                <div className={s.call}>
-                    <div className={s.numberBlock}>
-                        <span className={s.number}>+7 (383) 123 45 67</span>
+                <div className={s.phoneSection}>
+                    <div className={s.phone}>
+                        <span className={s.phoneNumber}>+7 (383) 123 45 67</span>
                         <img src={chevron} alt="Chevron" className={s.chevron}/>
                     </div>
-                    <span className={s.callText}>ЗАКАЗАТЬ ЗВОНОК</span>
+                    <span className={s.phoneText}>ЗАКАЗАТЬ ЗВОНОК</span>
                 </div>
             </div>
             <img src={logo} alt="Camilla De Luxe" className={s.logo}/>
-            <div className={s.headerActions}>
-                <img src={search} alt="Search" className={s.icon}/>
-                <img src={user} alt="User" className={s.icon}/>
-                <div className={clsx(s.headerAction, s.likeBlock)}>
-                    <img src={like} alt="Like" className={s.icon}/>
-                    <div className={s.count}>0</div>
+            <div className={s.actions}>
+                <div className={s.action}>
+                    <img src={search} alt="Search" className={s.actionIcon}/>
                 </div>
-                <div className={s.headerAction}>
-                    <img src={cart} alt="Cart" className={s.icon}/>
-                    <div className={s.count}>0</div>
+                <div className={s.action}>
+                    <img src={user} alt="User" className={s.actionIcon}/>
+                </div>
+                <div className={clsx(s.action, s.actionLike)}>
+                    <img src={like} alt="Like" className={s.actionIcon}/>
+                    <div className={s.counter}>0</div>
+                </div>
+                <div className={s.action}>
+                    <img src={cart} alt="Cart" className={s.actionIcon}/>
+                    <div className={s.counter}>0</div>
                 </div>
             </div>
         </div>

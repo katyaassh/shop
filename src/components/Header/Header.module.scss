@@ -28,7 +28,7 @@
   padding: 6px;
 }
 
-.headerActions {
+.actions {
   align-items: center;
   display: flex;
   gap: 15px;
@@ -60,7 +60,7 @@
   }
 }
 
-.call {
+.phoneSection {
   flex-direction: column;
   justify-content: space-around;
   display: flex;
@@ -71,12 +71,12 @@
   }
 }
 
-.numberBlock {
+.phone {
   align-items: center;
   display: flex;
 }
 
-.number {
+.phoneNumber {
   font-weight: 700;
   font-size: 14px;
 }
@@ -88,7 +88,7 @@
   margin: 0 8px 0 6px;
 }
 
-.callText {
+.phoneText {
   font-size: 8px;
   letter-spacing: 0.8px;
 }
@@ -102,18 +102,19 @@
   }
 }
 
-.headerAction {
+.action {
   flex-direction: row;
   align-items: center;
   display: flex;
-  &.likeBlock {
-    @media screen and (max-width: $mobile) {
-      display: none;
-    }
+}
+
+.actionLike {
+  @media screen and (max-width: $mobile) {
+    display: none;
   }
 }
 
-.count {
+.counter {
   align-items: center;
   justify-content: center;
   display: flex;
@@ -130,7 +131,7 @@
   }
 }
 
-.icon {
+.actionIcon {
   cursor: pointer;
   &:hover {
     filter: brightness(2);
