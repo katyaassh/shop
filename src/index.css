@@ -1,9 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
 body {
   margin: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #EDEEF0;
 }
 
 code {
@@ -12,6 +13,6 @@ code {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1015px;
   margin: 0 auto;
 }
