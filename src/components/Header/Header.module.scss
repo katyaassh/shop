@@ -2,92 +2,138 @@
 
 .headerContainer {
   position: fixed;
-  left: 0;
   top: 0;
+  left: 0;
   width: 100%;
   background-color: white;
   box-shadow: 0 -2px 6px 2px rgba(0, 0, 0, 0.06);
+
+  @media screen and (max-width: $tablet) {
+    background-color: black;
+  }
 }
 
 .header {
   justify-content: space-between;
   align-items: center;
   display: flex;
-  height: 48px;
+  height: 62px;
 }
 
 .sectionLeft {
   align-items: center;
-  display: flex;
-  padding-left: 6px;
+  grid-column-gap: 15px;
+  grid-template-columns: 24px auto;
+  display: grid;
+  padding: 6px;
 }
 
-.sectionRight {
+.actions {
   align-items: center;
   display: flex;
+  gap: 15px;
+  padding-right: 6px;
+}
+
+.menuIcon {
+  width: 24px;
+  padding-right: 40px;
+  fill: black;
+
+  @media screen and (max-width: $tablet) {
+    filter: invert(1);
+  }
+}
+
+.label {
+  display: none;
+
+  @media screen and (max-width: $tablet) {
+    display: block;
+    width: 100%;
+    font-weight: 700;
+    font-size: 18px;
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.phoneSection {
+  flex-direction: column;
+  justify-content: space-around;
+  display: flex;
+  width: 150px;
+  height: 40px;
+  @media screen and (max-width: $tablet) {
+    display: none;
+  }
+}
+
+.phone {
+  align-items: center;
+  display: flex;
+}
+
+.phoneNumber {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.chevron {
+  display: flex;
+  width: 8px;
+  height: 4px;
+  margin: 0 8px 0 6px;
+}
+
+.phoneText {
+  font-size: 8px;
+  letter-spacing: 0.8px;
 }
 
 .logo {
-  width: 136px;
-  height: 24px;
+  width: 162px;
   margin-right: 22px;
+
+  @media screen and (max-width: $tablet) {
+    display: none;
+  }
 }
 
-.search {
+.action {
+  flex-direction: row;
   align-items: center;
   display: flex;
-  width: 230px;
-  height: 32px;
-  border-radius: 7px;
-  background-color: $light-gray;
+}
+
+.actionLike {
   @media screen and (max-width: $mobile) {
     display: none;
   }
 }
 
-.searchIcon {
-  width: 14px;
-  height: 14px;
-  margin: 0 10px;
-}
-
-.searchText {
-  font-size: 14px;
-  color: #818c99;
-}
-
-.searchButton {
+.counter {
   align-items: center;
-  display: none;
-  height: 32px;
-  border-radius: 7px;
-  background-color: $light-gray;
-  @media screen and (max-width: $mobile) {
-    display: flex;
-  }
-}
-
-.user {
-  align-items: center;
+  justify-content: center;
   display: flex;
-  height: 48px;
-  padding-left: 10px;
+  width: 18px;
+  height: 17px;
+  font-size: 8px;
+  color: white;
+  background-color: black;
+  border-radius: 100%;
 
-  &:hover {
-    background-color: #f5f6f8;
-
+  @media screen and (max-width: $tablet) {
+    color: black;
+    background-color: white;
   }
 }
 
-.avatar {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.chevron {
-  width: 8px;
-  height: 4px;
-  margin: 0 8px 0 6px;
+.actionIcon {
+  cursor: pointer;
+  &:hover {
+    filter: brightness(2);
+  }
 }
