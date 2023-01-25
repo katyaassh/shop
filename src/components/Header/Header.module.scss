@@ -23,7 +23,7 @@
 .sectionLeft {
   align-items: center;
   grid-column-gap: 15px;
-  grid-template-columns: 24px auto;
+  grid-template-columns: 1fr auto;
   display: grid;
   padding: 6px;
 }
@@ -35,9 +35,15 @@
   padding-right: 6px;
 }
 
+.menuButton {
+  display: flex;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
 .menuIcon {
-  width: 24px;
-  padding-right: 40px;
+  //width: 24px;
   fill: black;
 
   @media screen and (max-width: $tablet) {

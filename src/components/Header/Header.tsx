@@ -4,20 +4,27 @@ import menu from "../../assets/icons/menu.svg"
 import user from "../../assets/icons/user.svg"
 import like from "../../assets/icons/like.svg"
 import cart from "../../assets/icons/cart.svg"
-import chevron from "../../assets/icons/chevron-down.svg"
+import chevron from "../../assets/icons/chevron.svg"
 import s from "./Header.module.scss"
 import React from "react";
 import clsx from "clsx"
+import {useDispatch} from "react-redux";
+import {openSidebar} from "../../store/actions/sidebar.actions";
+import {IDispatch} from "../../store/types/types";
 
-interface IProps {
+export const Header = (): JSX.Element => {
+    const dispatch: IDispatch = useDispatch()
 
-}
+    const onClick = (): void => {
+        dispatch(openSidebar())
+    }
 
-export const Header: React.FC<IProps> = () => {
     return <header className={s.headerContainer}>
         <div className={clsx('container', s.header)}>
             <div className={s.sectionLeft}>
-                <img src={menu} alt="Menu" className={s.menuIcon}/>
+                <button className={s.menuButton} onClick={onClick}>
+                    <img src={menu} alt="Menu" className={s.menuIcon}/>
+                </button>
                 <div className={s.label}>Интернет магазин парфюмерии</div>
                 <div className={s.phoneSection}>
                     <div className={s.phone}>

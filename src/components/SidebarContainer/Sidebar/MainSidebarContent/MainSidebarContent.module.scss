@@ -1,0 +1,76 @@
+
+.item {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  height: 60px;
+  padding: 0 15px;
+  font-weight: 700;
+  font-size: 15px;
+  border-bottom: 1px solid #f2f2f2;
+  cursor: pointer;
+}
+
+.chevron {
+  margin-left: auto;
+  transform: rotate(-90deg);
+}
+
+.counter {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: 18px;
+  height: 17px;
+  font-size: 8px;
+  color: white;
+  background-color: black;
+  border-radius: 100%;
+}
+
+.phoneNumber {
+  margin-bottom: 3px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.phoneText {
+  font-weight: 400;
+  font-size: 12px;
+  color: #999999;
+}
+
+.contacts {
+  padding: 15px;
+}
+
+.contactText {
+  padding-bottom: 15px;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.contactItem {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  height: 45px;
+}
+
+.contactIcon {
+  width: 20px;
+}
+
+.address {
+  font-size: 13px;
+}
+
+.social {
+  display: flex;
+  gap: 15px;
+  padding: 0 15px 15px;
+}
+
+.socialIcon {
+  width: 25px;
+}
