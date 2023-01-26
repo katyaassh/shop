@@ -1,8 +1,6 @@
-import React from "react";
-import s from "./Catalog.module.scss"
+import React from 'react';
+import s from './Catalog.module.scss';
 
 export const Catalog = (): JSX.Element => {
-    return <div className={s.catalog}>
-        Каталог
-    </div>
-}
+    return <div className={s.catalog}>Каталог</div>;
+};

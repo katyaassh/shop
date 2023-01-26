@@ -1,16 +1,16 @@
 .button {
-  align-items: center;
-  display: flex;
-  gap: 10px;
-  height: 60px;
-  width: 100%;
-  padding: 0 15px;
-  font-size: 15px;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    height: 60px;
+    width: 100%;
+    padding: 0 15px;
+    font-size: 15px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
 }
 
 .chevron {
-  transform: rotate(90deg);
+    transform: rotate(90deg);
 }

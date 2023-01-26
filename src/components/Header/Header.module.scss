@@ -1,142 +1,142 @@
-@import "src/variables";
+@import 'src/variables';
 
 .headerContainer {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: white;
-  box-shadow: 0 -2px 6px 2px rgba(0, 0, 0, 0.06);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 -2px 6px 2px rgba(0, 0, 0, 0.06);
 
-  @media screen and (max-width: $tablet) {
-    background-color: black;
-  }
+    @media screen and (max-width: $tablet) {
+        background-color: black;
+    }
 }
 
 .header {
-  justify-content: space-between;
-  align-items: center;
-  display: flex;
-  height: 62px;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    height: 62px;
 }
 
 .sectionLeft {
-  align-items: center;
-  grid-column-gap: 15px;
-  grid-template-columns: 1fr auto;
-  display: grid;
-  padding: 6px;
+    align-items: center;
+    grid-column-gap: 15px;
+    grid-template-columns: 1fr auto;
+    display: grid;
+    padding: 6px;
 }
 
 .actions {
-  align-items: center;
-  display: flex;
-  gap: 15px;
-  padding-right: 6px;
+    align-items: center;
+    display: flex;
+    gap: 15px;
+    padding-right: 6px;
 }
 
 .menuButton {
-  display: flex;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
+    display: flex;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
 }
 
 .menuIcon {
-  @media screen and (max-width: $tablet) {
-    filter: invert(1);
-  }
+    @media screen and (max-width: $tablet) {
+        filter: invert(1);
+    }
 }
 
 .label {
-  display: none;
+    display: none;
 
-  @media screen and (max-width: $tablet) {
-    display: block;
-    width: 100%;
-    font-weight: 700;
-    font-size: 18px;
-    color: white;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
+    @media screen and (max-width: $tablet) {
+        display: block;
+        width: 100%;
+        font-weight: 700;
+        font-size: 18px;
+        color: white;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
 }
 
 .phoneSection {
-  flex-direction: column;
-  justify-content: space-around;
-  display: flex;
-  width: 150px;
-  height: 40px;
-  @media screen and (max-width: $tablet) {
-    display: none;
-  }
+    flex-direction: column;
+    justify-content: space-around;
+    display: flex;
+    width: 150px;
+    height: 40px;
+    @media screen and (max-width: $tablet) {
+        display: none;
+    }
 }
 
 .phone {
-  align-items: center;
-  display: flex;
+    align-items: center;
+    display: flex;
 }
 
 .phoneNumber {
-  font-weight: 700;
-  font-size: 14px;
+    font-weight: 700;
+    font-size: 14px;
 }
 
 .chevron {
-  display: flex;
-  width: 8px;
-  height: 4px;
-  margin: 0 8px 0 6px;
+    display: flex;
+    width: 8px;
+    height: 4px;
+    margin: 0 8px 0 6px;
 }
 
 .phoneText {
-  font-size: 8px;
-  letter-spacing: 0.8px;
+    font-size: 8px;
+    letter-spacing: 0.8px;
 }
 
 .logo {
-  width: 162px;
-  margin-right: 22px;
+    width: 162px;
+    margin-right: 22px;
 
-  @media screen and (max-width: $tablet) {
-    display: none;
-  }
+    @media screen and (max-width: $tablet) {
+        display: none;
+    }
 }
 
 .action {
-  flex-direction: row;
-  align-items: center;
-  display: flex;
+    flex-direction: row;
+    align-items: center;
+    display: flex;
 }
 
 .actionLike {
-  @media screen and (max-width: $mobile) {
-    display: none;
-  }
+    @media screen and (max-width: $mobile) {
+        display: none;
+    }
 }
 
 .counter {
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  width: 18px;
-  height: 17px;
-  font-size: 8px;
-  color: white;
-  background-color: black;
-  border-radius: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 18px;
+    height: 17px;
+    font-size: 8px;
+    color: white;
+    background-color: black;
+    border-radius: 100%;
 
-  @media screen and (max-width: $tablet) {
-    color: black;
-    background-color: white;
-  }
+    @media screen and (max-width: $tablet) {
+        color: black;
+        background-color: white;
+    }
 }
 
 .actionIcon {
-  cursor: pointer;
-  &:hover {
-    filter: brightness(2);
-  }
+    cursor: pointer;
+    &:hover {
+        filter: brightness(2);
+    }
 }

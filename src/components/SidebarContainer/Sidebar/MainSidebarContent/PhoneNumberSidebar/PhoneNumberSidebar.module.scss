@@ -1,28 +1,28 @@
 .item {
-  align-items: center;
-  display: flex;
-  gap: 10px;
-  height: 60px;
-  padding: 0 15px;
-  font-weight: 700;
-  font-size: 15px;
-  border-bottom: 1px solid #f2f2f2;
-  cursor: pointer;
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    height: 60px;
+    padding: 0 15px;
+    font-weight: 700;
+    font-size: 15px;
+    border-bottom: 1px solid #f2f2f2;
+    cursor: pointer;
 }
 
 .chevron {
-  margin-left: auto;
-  transform: rotate(-90deg);
+    margin-left: auto;
+    transform: rotate(-90deg);
 }
 
 .phoneNumber {
-  margin-bottom: 3px;
-  font-weight: 700;
-  font-size: 14px;
+    margin-bottom: 3px;
+    font-weight: 700;
+    font-size: 14px;
 }
 
 .phoneText {
-  font-weight: 400;
-  font-size: 12px;
-  color: #999999;
+    font-weight: 400;
+    font-size: 12px;
+    color: #999999;
 }
