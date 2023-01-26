@@ -1,0 +1,24 @@
+.contacts {
+  padding: 15px;
+}
+
+.contactText {
+  padding-bottom: 15px;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.contactItem {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  height: 45px;
+}
+
+.contactIcon {
+  width: 20px;
+}
+
+.address {
+  font-size: 13px;
+}

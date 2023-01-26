@@ -43,9 +43,6 @@
 }
 
 .menuIcon {
-  //width: 24px;
-  fill: black;
-
   @media screen and (max-width: $tablet) {
     filter: invert(1);
   }

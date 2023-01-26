@@ -1,15 +1,14 @@
-import axios, {AxiosResponse} from "axios";
-import {IGenderItem} from "../models/gender-item";
-import {IGendersResponse} from "../models/genders-response";
+import axios, { AxiosResponse } from 'axios';
+import { IGendersResponse } from '../models/genders-response';
 
 const instance = axios.create({
-    baseURL: 'http://localhost:8000/api/filters/'
-})
+    baseURL: 'http://localhost:8000/api/filters/',
+});
 
 export const filtersAPI = {
-    getGenders(): Promise<IGenderItem[]> {
-        return instance.get(`gender`).then((response: AxiosResponse<IGendersResponse>): IGenderItem[] => {
-            return response.data.items;
-        })
-    }
-}
+    getGenders(): Promise<IGendersResponse> {
+        return instance.get(`gender`).then((response: AxiosResponse<IGendersResponse>): IGendersResponse => {
+            return response.data;
+        });
+    },
+};

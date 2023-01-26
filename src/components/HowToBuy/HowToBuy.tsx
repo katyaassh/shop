@@ -1,8 +1,6 @@
-import React from "react";
-import s from "./HowToBuy.module.scss"
+import React from 'react';
+import s from './HowToBuy.module.scss';
 
 export const HowToBuy = (): JSX.Element => {
-    return <div className={s.howtobuy}>
-        Как купить
-    </div>
-}
+    return <div className={s.howToBuy}>Как купить</div>;
+};
