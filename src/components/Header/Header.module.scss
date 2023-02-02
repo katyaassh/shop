@@ -2,6 +2,7 @@
 
 .headerContainer {
     position: fixed;
+    z-index: 2;
     top: 0;
     left: 0;
     width: 100%;
@@ -137,6 +138,12 @@
 .actionIcon {
     cursor: pointer;
     &:hover {
-        filter: brightness(2);
+        filter: brightness(0);
+    }
+
+    @media screen and (max-width: $tablet) {
+        &:hover {
+            filter: brightness(2);
+        }
     }
 }

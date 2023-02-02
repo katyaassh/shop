@@ -1,0 +1,60 @@
+@import '../../../variables';
+
+.specialOffers {
+    margin-top: 50px;
+    padding: 0 15px;
+}
+
+.header {
+    justify-content: space-between;
+    display: flex;
+    margin-bottom: 30px;
+
+    @media screen and (max-width: $mobile) {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+.title {
+    font-size: 20px;
+}
+
+.filters {
+    align-items: center;
+    display: flex;
+    gap: 20px;
+}
+
+.filtersButton {
+    padding: 0;
+    font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+}
+
+.active {
+    padding: 0;
+    font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
+    background-color: inherit;
+    border: none;
+    border-bottom: 1px solid black;
+    cursor: pointer;
+}
+
+.catalogButton {
+    font-size: 10px;
+    color: $gray;
+    text-decoration: none;
+
+    &:hover {
+        color: black;
+    }
+
+    @media screen and (max-width: $tablet) {
+        margin-left: auto;
+    }
+}

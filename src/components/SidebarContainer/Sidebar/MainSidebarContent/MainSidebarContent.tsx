@@ -8,6 +8,7 @@ import { PhoneNumberSidebar } from './PhoneNumberSidebar/PhoneNumberSidebar';
 import { ContactsSidebarItem } from './ContactsSidebarItem/ContactsSidebarItem';
 import { SocialNetworkSidebarItem } from './SocialNetworkSidebarItem/SocialNetworkSidebarItem';
 import { MainSidebarLinkItem } from './MainSidebarLinkItem/MainSidebarLinkItem';
+import s from './MainSidebarContent.module.scss';
 
 interface IProps {
     onItemClick: (currentPage: SidebarContentIdsEnum) => void;
@@ -15,16 +16,22 @@ interface IProps {
 
 export const MainSidebarContent = (props: IProps): JSX.Element => {
     return (
-        <div>
-            <MainSidebarItem onItemClick={props.onItemClick} currentPage={SidebarContentIdsEnum.Catalog} title={'Каталог'} />
-            <MainSidebarLinkItem title={'Акции'} />
-            <MainSidebarLinkItem title={'Бренды'} />
-            <MainSidebarItem onItemClick={props.onItemClick} currentPage={SidebarContentIdsEnum.HowToBuy} title={'Как купить'} />
-            <MainSidebarItem onItemClick={props.onItemClick} currentPage={SidebarContentIdsEnum.Company} title={'Компания'} />
-            <MainSidebarLinkItem title={'Личный кабинет'} icon={user} />
-            <MainSidebarLinkItem title={'Корзина'} icon={cart} count={0} />
-            <MainSidebarLinkItem title={'Отложенные'} icon={like} count={0} />
-            <PhoneNumberSidebar />
+        <div className={s.main}>
+            <div className={s.links}>
+                <MainSidebarItem onItemClick={props.onItemClick} currentPage={SidebarContentIdsEnum.Catalog} title={'Каталог'} />
+                <MainSidebarLinkItem title={'Акции'} />
+                <MainSidebarLinkItem title={'Бренды'} />
+                <MainSidebarItem
+                    onItemClick={props.onItemClick}
+                    currentPage={SidebarContentIdsEnum.HowToBuy}
+                    title={'Как купить'}
+                />
+                <MainSidebarItem onItemClick={props.onItemClick} currentPage={SidebarContentIdsEnum.Company} title={'Компания'} />
+                <MainSidebarLinkItem title={'Личный кабинет'} icon={user} />
+                <MainSidebarLinkItem title={'Корзина'} icon={cart} count={0} />
+                <MainSidebarLinkItem title={'Отложенные'} icon={like} count={0} />
+                <PhoneNumberSidebar />
+            </div>
             <ContactsSidebarItem />
             <SocialNetworkSidebarItem />
         </div>
