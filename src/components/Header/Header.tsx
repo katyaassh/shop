@@ -12,6 +12,7 @@ import { useDispatch } from 'react-redux';
 import { openSidebar } from '../../store/actions/sidebar.actions';
 import { IDispatch } from '../../store/types/types';
 import { NavLink } from 'react-router-dom';
+import { PagesUrlsEnum } from '../../enums/pages-urls.enum';
 
 export const Header = (): JSX.Element => {
     const dispatch: IDispatch = useDispatch();
@@ -36,7 +37,7 @@ export const Header = (): JSX.Element => {
                         <span className={s.phoneText}>ЗАКАЗАТЬ ЗВОНОК</span>
                     </div>
                 </div>
-                <NavLink to={'/'}>
+                <NavLink to={PagesUrlsEnum.Main}>
                     <img src={logo} alt='Camilla De Luxe' className={s.logo} />
                 </NavLink>
                 <div className={s.actions}>

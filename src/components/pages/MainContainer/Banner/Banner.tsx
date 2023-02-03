@@ -1,5 +1,5 @@
 import s from './Banner.module.scss';
-import perfume from '../../../assets/image/perfume.png';
+import perfume from '../../../../assets/image/perfume.png';
 
 export const Banner = (): JSX.Element => {
     return (

@@ -1,4 +1,4 @@
-import { IProductItem } from '../../models/product-item';
+import { IProductItem } from '../../../models/product-item';
 import s from './Products.module.scss';
 import { ProductItem } from './ProductItem/ProductItem';
 

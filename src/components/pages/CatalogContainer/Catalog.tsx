@@ -1,10 +1,10 @@
 import React from 'react';
 import s from './Catalog.module.scss';
 import clsx from 'clsx';
-import { Products } from '../Products/Products';
+import { Products } from '../../common/Products/Products';
 import { useSelector } from 'react-redux';
-import { selectProducts } from '../../store/selectors/catalog.selectors';
-import { IProductItem } from '../../models/product-item';
+import { selectProducts } from '../../../store/selectors/products.selectors';
+import { IProductItem } from '../../../models/product-item';
 
 export const Catalog = (): JSX.Element => {
     const products: IProductItem[] = useSelector(selectProducts);

@@ -5,7 +5,7 @@ import { CatalogSidebarItems } from './CatalogSidebarItems/CatalogSidebarItems';
 import { SidebarContentIdsEnum } from '../../../../enums/sidebar.enum';
 import { HowToBuySidebarItems } from './HowToBuySidebarItems/HowToBuySidebarItems';
 import { CompanySidebarItems } from './CompanySidebarItems/CompanySidebarItems';
-import { PagesUrlsEnum } from '../../../../enums/pagesUrls.enum';
+import { PagesUrlsEnum } from '../../../../enums/pages-urls.enum';
 
 interface IProps {
     currentPage: SidebarContentIdsEnum;

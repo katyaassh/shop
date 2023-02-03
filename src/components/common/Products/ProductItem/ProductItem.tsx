@@ -1,8 +1,8 @@
 import s from './ProductItem.module.scss';
-import like from '../../../assets/icons/like.svg';
-import { Counter } from '../../common/Counter/Counter';
-import { IProductItem } from '../../../models/product-item';
-import { StarRating } from '../../common/StarRating/StarRating';
+import like from '../../../../assets/icons/like.svg';
+import { Counter } from '../../Counter/Counter';
+import { IProductItem } from '../../../../models/product-item';
+import { StarRating } from '../../StarRating/StarRating';
 
 interface IProps {
     product: IProductItem;

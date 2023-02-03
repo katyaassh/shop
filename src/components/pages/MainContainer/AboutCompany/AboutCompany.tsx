@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
-import { PagesUrlsEnum } from '../../../enums/pagesUrls.enum';
+import { PagesUrlsEnum } from '../../../../enums/pages-urls.enum';
 import s from './AboutCompany.module.scss';
-import logo from '../../../assets/image/logo.svg';
+import logo from '../../../../assets/image/logo.svg';
 
 export const AboutCompany = (): JSX.Element => {
     return (
