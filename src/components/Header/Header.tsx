@@ -11,6 +11,8 @@ import clsx from 'clsx';
 import { useDispatch } from 'react-redux';
 import { openSidebar } from '../../store/actions/sidebar.actions';
 import { IDispatch } from '../../store/types/types';
+import { NavLink } from 'react-router-dom';
+import { PagesUrlsEnum } from '../../enums/pages-urls.enum';
 
 export const Header = (): JSX.Element => {
     const dispatch: IDispatch = useDispatch();
@@ -35,7 +37,9 @@ export const Header = (): JSX.Element => {
                         <span className={s.phoneText}>ЗАКАЗАТЬ ЗВОНОК</span>
                     </div>
                 </div>
-                <img src={logo} alt='Camilla De Luxe' className={s.logo} />
+                <NavLink to={PagesUrlsEnum.Main}>
+                    <img src={logo} alt='Camilla De Luxe' className={s.logo} />
+                </NavLink>
                 <div className={s.actions}>
                     <div className={s.action}>
                         <img src={search} alt='Search' className={s.actionIcon} />
