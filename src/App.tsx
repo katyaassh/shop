@@ -7,6 +7,7 @@ import { SidebarContainer } from './components/SidebarContainer/SidebarContainer
 import { PagesUrlsEnum } from './enums/pages-urls.enum';
 import { MainContainer } from './components/pages/MainContainer/MainContainer';
 import { Footer } from './components/Footer/Footer';
+import s from './App.module.scss';
 
 const CatalogContainer = React.lazy(() =>
     import('./components/pages/CatalogContainer/CatalogContainer').then((module) => ({
@@ -31,12 +32,14 @@ function App(): JSX.Element {
                 <Suspense>
                     <Header />
                     <SidebarContainer />
-                    <Routes>
-                        <Route path={PagesUrlsEnum.Main} element={<MainContainer />} />
-                        <Route path={PagesUrlsEnum.Catalog} element={<CatalogContainer />} />
-                        <Route path={PagesUrlsEnum.HowToBuy} element={<HowToBuy />} />
-                        <Route path={PagesUrlsEnum.Company} element={<Company />} />
-                    </Routes>
+                    <div className={s.wrapper}>
+                        <Routes>
+                            <Route path={PagesUrlsEnum.Main} element={<MainContainer />} />
+                            <Route path={PagesUrlsEnum.Catalog} element={<CatalogContainer />} />
+                            <Route path={PagesUrlsEnum.HowToBuy} element={<HowToBuy />} />
+                            <Route path={PagesUrlsEnum.Company} element={<Company />} />
+                        </Routes>
+                    </div>
                     <Footer />
                 </Suspense>
             </BrowserRouter>

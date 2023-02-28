@@ -7,7 +7,10 @@ export const productsReducer = (state: IProductsState = productsState, action: P
         case SET_PRODUCTS: {
             return {
                 ...state,
-                products: action.payload,
+                products: action.payload.products,
+                totalCount: action.payload.count,
+                pageCount: action.payload.pageCount,
+                page: action.payload.page,
             };
         }
         case SET_SPECIAL_OFFERS: {

@@ -5,4 +5,5 @@ export interface IProductsResponse {
     count: number;
     pageCount: number;
     error: null;
+    page: number;
 }

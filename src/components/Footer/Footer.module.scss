@@ -1,7 +1,9 @@
 @import 'src/variables';
 
 .footerContainer {
+    flex: 0 0 auto;
     background-color: #333333;
+    width: 100%;
 }
 
 .footer {

@@ -1,0 +1,25 @@
+@import 'src/variables';
+
+.pagination {
+    justify-content: center;
+    display: flex;
+    gap: 20px;
+    margin: 20px auto;
+}
+
+.item {
+    width: 15px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.activeItem {
+    width: 15px;
+    text-align: center;
+    border-bottom: 1px solid black;
+}
+
+.sideSection {
+    display: flex;
+    gap: 20px;
+}

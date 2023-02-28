@@ -1,0 +1,35 @@
+@import 'src/variables';
+
+.filters {
+    flex-direction: column;
+    display: flex;
+}
+
+.filtersSidebar {
+    width: 280px;
+    height: 100%;
+    background-color: white;
+    overflow: auto;
+}
+
+.button {
+    height: 60px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: white;
+    background-color: black;
+    border: none;
+    cursor: pointer;
+}
+
+.resetFormButton {
+    height: 60px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    background-color: inherit;
+    border: none;
+    border-bottom: 1px solid $smoky-white;
+    cursor: pointer;
+}

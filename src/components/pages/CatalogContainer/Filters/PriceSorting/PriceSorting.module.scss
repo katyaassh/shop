@@ -1,0 +1,68 @@
+@import 'src/variables';
+
+.priceSorting {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.sort {
+    width: 200px;
+    position: relative;
+    border: 1px solid $light-gray;
+    border-radius: 5px;
+}
+
+.activeSort {
+    width: 100%;
+    background-color: white;
+    position: absolute;
+    border: 1px solid $light-gray;
+    z-index: 5;
+    border-radius: 5px;
+}
+
+.label {
+    height: 27px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+    border-radius: 5px;
+    &:hover {
+        background-color: $smoky-white;
+    }
+    cursor: pointer;
+}
+
+.chevron {
+    width: 10px;
+    padding-right: 10px;
+}
+
+.item {
+    height: 27px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    border-radius: 5px;
+    &:hover {
+        background-color: $smoky-white;
+    }
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.radio {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+}
