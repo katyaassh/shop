@@ -17,7 +17,7 @@ interface IProps {
 export const MainSidebarContent = (props: IProps): JSX.Element => {
     return (
         <div className={s.main}>
-            <div className={s.links}>
+            <div>
                 <MainSidebarItem onItemClick={props.onItemClick} currentPage={SidebarContentIdsEnum.Catalog} title={'Каталог'} />
                 <MainSidebarLinkItem title={'Акции'} />
                 <MainSidebarLinkItem title={'Бренды'} />

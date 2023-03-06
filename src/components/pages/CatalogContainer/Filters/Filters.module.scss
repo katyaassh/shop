@@ -1,0 +1,29 @@
+@import 'src/variables';
+
+.filters {
+    position: relative;
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.button {
+    padding: 5px 10px;
+    margin-right: 15px;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    background-color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.resetFormButton {
+    padding: 5px 10px;
+    font-family: 'Montserrat', sans-serif;
+    background-color: inherit;
+    border: 1px solid $light-gray;
+    border-radius: 5px;
+    cursor: pointer;
+}

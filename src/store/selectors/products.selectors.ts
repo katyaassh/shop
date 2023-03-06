@@ -8,3 +8,6 @@ export const selectProductsState = (state: IState): IProductsState => state.prod
 export const selectProducts = createSelector(selectProductsState, (state: IProductsState): IProductItem[] => state.products);
 export const selectNovelties = createSelector(selectProductsState, (state: IProductsState): IProductItem[] => state.novelties);
 export const selectDiscounts = createSelector(selectProductsState, (state: IProductsState): IProductItem[] => state.discounts);
+export const selectTotalCount = createSelector(selectProductsState, (state: IProductsState): number => state.totalCount);
+export const selectPageCount = createSelector(selectProductsState, (state: IProductsState): number => state.pageCount);
+export const selectPage = createSelector(selectProductsState, (state: IProductsState): number => state.page);

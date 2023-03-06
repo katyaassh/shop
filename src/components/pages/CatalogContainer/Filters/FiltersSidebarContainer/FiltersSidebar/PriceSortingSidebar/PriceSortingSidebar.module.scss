@@ -1,0 +1,78 @@
+@import 'src/variables';
+
+.name {
+    align-items: center;
+    display: flex;
+    height: 60px;
+    padding: 0 15px;
+    font-weight: 700;
+    font-size: 15px;
+    border-bottom: 1px solid $smoky-white;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $smoky-white;
+    }
+}
+
+.nameActive {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    height: 60px;
+    padding: 0 15px;
+    font-weight: 700;
+    font-size: 15px;
+    color: white;
+    background-color: black;
+    border-bottom: 1px solid $gray;
+    cursor: pointer;
+
+    .chevron {
+        filter: invert(1);
+    }
+}
+
+.chevron {
+    margin-left: auto;
+}
+
+.item {
+    position: relative;
+    align-items: center;
+    display: flex;
+    height: 60px;
+    padding: 0 15px;
+    gap: 10px;
+    font-size: 15px;
+    border-bottom: 1px solid $smoky-white;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $smoky-white;
+    }
+}
+
+.activeItem {
+    position: relative;
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    height: 60px;
+    padding: 0 15px;
+    font-size: 15px;
+    background-color: $light-gray;
+    border-bottom: 1px solid $smoky-white;
+    cursor: pointer;
+}
+
+.radio {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+}
