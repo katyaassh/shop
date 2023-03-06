@@ -5,6 +5,7 @@ import { FiltersSidebarDropdown } from './FiltersSidebarDropdown/FiltersSidebarD
 import { ProductsParams } from '../../../../../../models/products-params-type';
 import { PriceSliderSidebar } from './PriceSliderSidebar/PriceSliderSidebar';
 import { PriceSortingSidebar } from './PriceSortingSidebar/PriceSortingSidebar';
+import { getOnSubmitFilters } from '../../../../../../helpers/getOnSubmitFilters';
 
 interface IProps {
     initialValues: FormikValues;
@@ -13,33 +14,12 @@ interface IProps {
     onClose: () => void;
 }
 
-interface FiltersValues {
-    brand?: string[];
-    specialOffers?: string[];
-    fragrance?: string[];
-    gender?: string[];
-    perfumeType?: string[];
-}
-
 export const FiltersSidebar = (props: IProps): JSX.Element => {
-    const onSubmit = (values: FormikValues) => {
-        let { specialOffers, ...otherValues }: FiltersValues = values;
-        otherValues = Object.fromEntries(
-            Object.entries(otherValues).filter(([_, value]: [string, string[] | number | string]) => {
-                if (typeof value === 'number') {
-                    return value;
-                } else {
-                    return value.length;
-                }
-            })
-        );
-        props.onClose();
-        props.onFiltersChange(otherValues);
-    };
+    const onSubmit = getOnSubmitFilters(props.onFiltersChange, props.onClose);
 
     return (
         <div className={s.filtersSidebar}>
-            <Formik initialValues={props.initialValues} onSubmit={(values: FormikValues) => onSubmit(values)}>
+            <Formik initialValues={props.initialValues} onSubmit={onSubmit}>
                 {({ values, setValues, setFieldValue }: FormikProps<FormikValues>) => (
                     <Form>
                         <div className={s.filters}>

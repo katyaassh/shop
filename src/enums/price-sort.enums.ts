@@ -1,5 +1,5 @@
 export enum PriceSortEnums {
-    None = 'none',
+    None = '',
     Dec = 'dec',
     Inc = 'inc',
 }

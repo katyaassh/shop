@@ -6,10 +6,10 @@ import { IProductItem } from '../../../models/product-item';
 import { ICategory } from '../../../models/category';
 import { Filters } from './Filters/Filters';
 import { ProductsParams } from '../../../models/products-params-type';
-import { useWindowDimensions } from '../../../hooks/useWindowDimensions';
 import chevron from '../../../assets/icons/chevron.svg';
 import { FiltersSidebarContainer } from './Filters/FiltersSidebarContainer/FiltersSidebarContainer';
 import { Pagination } from '../../common/Pagination/Pagination';
+import { useMediaQuery } from '../../../hooks/useMediaQuery';
 
 interface IProps {
     filters: ICategory[];
@@ -25,7 +25,15 @@ interface IProps {
 export const Catalog = (props: IProps): JSX.Element => {
     const [isOpen, setIsOpen] = useState(false);
 
-    const { width } = useWindowDimensions();
+    const onFiltersOpenClick = (): void => {
+        setIsOpen(true);
+    };
+
+    const onFiltersClose = (): void => {
+        setIsOpen(false);
+    };
+
+    const isTablet = useMediaQuery(992);
 
     return (
         <div className={clsx(s.catalog, 'container')}>
@@ -33,8 +41,8 @@ export const Catalog = (props: IProps): JSX.Element => {
                 <div className={s.title}>Каталог</div>
                 <div className={s.totalCount}>{props.totalCount}</div>
             </div>
-            {width < 992 ? (
-                <button type='button' className={s.filtersButton} onClick={() => setIsOpen(true)}>
+            {isTablet ? (
+                <button type='button' className={s.filtersButton} onClick={onFiltersOpenClick}>
                     Фильтры <img src={chevron} alt='Chevron' className={s.chevron} />
                 </button>
             ) : (
@@ -42,7 +50,7 @@ export const Catalog = (props: IProps): JSX.Element => {
             )}
             <FiltersSidebarContainer
                 isOpen={isOpen}
-                onClose={() => setIsOpen(false)}
+                onClose={onFiltersClose}
                 initialValues={props.initialValues}
                 filters={props.filters}
                 onFiltersChange={props.onFiltersChange}

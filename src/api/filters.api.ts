@@ -8,13 +8,13 @@ const instance = axios.create({
 
 export const filtersAPI = {
     getFilters(): Promise<IFiltersResponse> {
-        return instance.get(``).then((response: AxiosResponse<IFiltersResponse>): IFiltersResponse => {
+        return instance.get('').then((response: AxiosResponse<IFiltersResponse>): IFiltersResponse => {
             return response.data;
         });
     },
 
     getGenders(): Promise<IGendersResponse> {
-        return instance.get(`gender`).then((response: AxiosResponse<IGendersResponse>): IGendersResponse => {
+        return instance.get('gender').then((response: AxiosResponse<IGendersResponse>): IGendersResponse => {
             return response.data;
         });
     },

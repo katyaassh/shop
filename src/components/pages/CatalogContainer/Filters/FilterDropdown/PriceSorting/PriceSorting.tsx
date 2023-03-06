@@ -1,52 +1,36 @@
 import s from './PriceSorting.module.scss';
 import { Field } from 'formik';
-import { MutableRefObject, useEffect, useRef, useState } from 'react';
-import { PriceSortEnums } from '../../../../../enums/price-sort.enums';
-import { useClickOutside } from '../../../../../hooks/useClickOutside';
-import chevron from '../../../../../assets/icons/chevron.svg';
+import { useRef } from 'react';
+import { PriceSortEnums } from '../../../../../../enums/price-sort.enums';
+import { useClickOutside } from '../../../../../../hooks/useClickOutside';
+import chevron from '../../../../../../assets/icons/chevron.svg';
+import { usePriceSorting } from '../../../../../../hooks/usePriceSorting';
 
 interface IProps {
-    sort: string[] | string;
+    sort: PriceSortEnums[] | PriceSortEnums;
 }
 
 export const PriceSorting = (props: IProps): JSX.Element => {
-    const [isOpen, setIsOpen] = useState(false);
+    const priceSorting = usePriceSorting(props.sort);
 
-    const onLabelClick = () => {
-        setIsOpen(!isOpen);
+    const onItemClick = (): void => {
+        priceSorting.setIsOpen(false);
     };
 
-    const onItemClick = () => {
-        setIsOpen(false);
-    };
-
-    const [activeTab, setActiveTab] = useState('');
-
-    useEffect(() => {
-        if (props.sort) {
-            if (typeof props.sort !== 'string') {
-                setActiveTab(props.sort.join(''));
-            }
-            if (typeof props.sort === 'string') {
-                setActiveTab(props.sort);
-            }
-        } else setActiveTab('');
-    }, [props.sort]);
-
-    const ref: MutableRefObject<any> = useRef();
-    useClickOutside(ref, () => setIsOpen(false));
+    const ref = useRef<HTMLDivElement>(null);
+    useClickOutside(ref, () => priceSorting.setIsOpen(false));
 
     return (
         <div className={s.priceSorting}>
             <span>Сортировка:</span>
             <div className={s.sort} ref={ref}>
-                <div className={s.label} onClick={onLabelClick}>
-                    {!activeTab && 'нет'}
-                    {activeTab === PriceSortEnums.Inc && 'сначала недорогие'}
-                    {activeTab === PriceSortEnums.Dec && 'сначала дорогие'}
+                <div className={s.label} onClick={priceSorting.onLabelClick}>
+                    {!priceSorting.sortState && 'нет'}
+                    {priceSorting.sortState === PriceSortEnums.Inc && 'сначала недорогие'}
+                    {priceSorting.sortState === PriceSortEnums.Dec && 'сначала дорогие'}
                     <img src={chevron} alt='Chevron' className={s.chevron} />
                 </div>
-                {isOpen && (
+                {priceSorting.isOpen && (
                     <div className={s.activeSort}>
                         <div className={s.item} onClick={() => onItemClick()}>
                             <Field name='sort' value='' type='radio' id={'none'} className={s.radio} />

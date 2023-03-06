@@ -1,4 +1,4 @@
-import React, { MutableRefObject, SyntheticEvent, useRef } from 'react';
+import React, { SyntheticEvent, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import s from './Overlay.module.scss';
 
@@ -9,7 +9,7 @@ interface IProps {
 }
 
 export const Overlay = (props: IProps): JSX.Element => {
-    const overlayRef: MutableRefObject<HTMLDivElement | null> = useRef(null);
+    const overlayRef = useRef<HTMLDivElement>(null);
 
     if (!props.isOpen) {
         return <></>;

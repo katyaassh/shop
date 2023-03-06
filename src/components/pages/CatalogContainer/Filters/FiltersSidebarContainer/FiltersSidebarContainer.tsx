@@ -23,12 +23,8 @@ export const FiltersSidebarContainer = (props: IProps): JSX.Element => {
         }
     }, [pathname]);
 
-    const onClose = (): void => {
-        props.onClose();
-    };
-
     return (
-        <Overlay isOpen={props.isOpen} onClose={onClose}>
+        <Overlay isOpen={props.isOpen} onClose={props.onClose}>
             <FiltersSidebar
                 initialValues={props.initialValues}
                 filters={props.filters}

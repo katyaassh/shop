@@ -3,7 +3,7 @@ import s from './FilterDropdown.module.scss';
 import chevron from '../../../../../assets/icons/chevron.svg';
 import { ICategoryItem } from '../../../../../models/category-item';
 import { ICategory } from '../../../../../models/category';
-import { MutableRefObject, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { useClickOutside } from '../../../../../hooks/useClickOutside';
 import { Checkbox } from '../../../../common/Checkbox/Checkbox';
 
@@ -18,11 +18,15 @@ interface IProps {
 
 export const FilterDropdown = (props: IProps): JSX.Element => {
     const [isOpen, setIsOpen] = useState(false);
-    const ref: MutableRefObject<any> = useRef();
+    const ref = useRef<HTMLDivElement>(null);
     useClickOutside(ref, () => setIsOpen(false));
 
-    const onLabelClick = () => {
+    const onLabelClick = (): void => {
         setIsOpen(!isOpen);
+    };
+
+    const onResetFieldClick = (): void => {
+        props.setFieldValue(props.category, '');
     };
 
     return (
@@ -31,7 +35,7 @@ export const FilterDropdown = (props: IProps): JSX.Element => {
                 {props.label}
                 {props.activeCount ? <div className={s.count}>:&nbsp;{props.activeCount}</div> : null}
                 <img src={chevron} alt='Chevron' className={s.chevron} />
-                <button type='button' onClick={() => props.setFieldValue(props.category, '')} className={s.resetFieldButton}>
+                <button type='button' onClick={onResetFieldClick} className={s.resetFieldButton}>
                     x
                 </button>
             </div>

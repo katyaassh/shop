@@ -4,7 +4,8 @@ import { ProductsParams } from '../../../../models/products-params-type';
 import { Form, Formik, FormikProps, FormikValues } from 'formik';
 import { FilterDropdown } from './FilterDropdown/FilterDropdown';
 import { PriceSlider } from './FilterDropdown/PriceSlider/PriceSlider';
-import { PriceSorting } from './PriceSorting/PriceSorting';
+import { PriceSorting } from './FilterDropdown/PriceSorting/PriceSorting';
+import { getOnSubmitFilters } from '../../../../helpers/getOnSubmitFilters';
 
 interface IProps {
     filters: ICategory[];
@@ -27,34 +28,12 @@ export const Filters = (props: IProps): JSX.Element => {
     const isVisible = !!props.filters.length;
     const initialValues: FiltersValues = props.initialValues;
 
-    const onSubmit = (values: FormikValues) => {
-        let { specialOffers, ...otherValues }: FiltersValues = values;
-        otherValues = Object.fromEntries(
-            Object.entries(otherValues).filter(([_, value]: [string, string[] | number | string]) => {
-                if (typeof value === 'number') {
-                    return value;
-                } else {
-                    return value.length;
-                }
-            })
-        );
-
-        if (specialOffers) {
-            otherValues = {
-                ...otherValues,
-                ...specialOffers.reduce((acc: { [key: string]: boolean }, val: string) => {
-                    acc[val] = true;
-                    return acc;
-                }, {}),
-            };
-        }
-        props.onFiltersChange(otherValues);
-    };
+    const onSubmit = getOnSubmitFilters(props.onFiltersChange);
 
     return (
         <div>
             {isVisible && (
-                <Formik initialValues={initialValues} onSubmit={(values: FormikValues) => onSubmit(values)}>
+                <Formik initialValues={initialValues} onSubmit={onSubmit}>
                     {({ values, setValues, setFieldValue }: FormikProps<FormikValues>) => (
                         <Form>
                             <div className={s.filters}>

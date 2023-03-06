@@ -1,16 +1,16 @@
-@import '../../../../../../variables';
+@import 'src/variables';
 
 .priceSlider {
     position: absolute;
+    z-index: 5;
     flex-direction: column;
     display: flex;
     gap: 20px;
     width: 230px;
     padding: 10px;
     background-color: white;
-    border-radius: 5px;
     border: 1px solid $light-gray;
-    z-index: 5;
+    border-radius: 5px;
 }
 
 .inputs {
@@ -23,9 +23,9 @@
 }
 
 .input {
+    width: 100%;
     margin: 0;
     padding: 10px;
-    width: 100%;
     font-family: 'Montserrat', sans-serif;
     background-color: $smoky-white;
     border: none;
@@ -109,7 +109,7 @@
 
 .track {
     height: 4px;
-    background: $light-gray;
+    background-color: $light-gray;
 
     &:nth-of-type(2) {
         background-color: $gray;

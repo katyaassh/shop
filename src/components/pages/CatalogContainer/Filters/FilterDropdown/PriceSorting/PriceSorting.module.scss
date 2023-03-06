@@ -1,4 +1,4 @@
-@import 'src/variables';
+@import '../../../../../../variables';
 
 .priceSorting {
     display: flex;
@@ -8,33 +8,34 @@
 }
 
 .sort {
-    width: 200px;
     position: relative;
+    width: 200px;
     border: 1px solid $light-gray;
     border-radius: 5px;
 }
 
 .activeSort {
+    z-index: 5;
+    position: absolute;
     width: 100%;
     background-color: white;
-    position: absolute;
     border: 1px solid $light-gray;
-    z-index: 5;
     border-radius: 5px;
 }
 
 .label {
-    height: 27px;
     position: relative;
-    display: flex;
     justify-content: space-between;
     align-items: center;
+    display: flex;
+    height: 27px;
     padding-left: 10px;
     border-radius: 5px;
+    cursor: pointer;
+
     &:hover {
         background-color: $smoky-white;
     }
-    cursor: pointer;
 }
 
 .chevron {
@@ -43,17 +44,18 @@
 }
 
 .item {
-    height: 27px;
     position: relative;
-    display: flex;
     align-items: center;
+    display: flex;
+    height: 27px;
     padding-left: 10px;
+    font-family: 'Montserrat', sans-serif;
+    border: none;
     border-radius: 5px;
+
     &:hover {
         background-color: $smoky-white;
     }
-    border: none;
-    font-family: 'Montserrat', sans-serif;
 }
 
 .radio {

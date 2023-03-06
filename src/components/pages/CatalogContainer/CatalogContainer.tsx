@@ -24,9 +24,9 @@ export const CatalogContainer = (): JSX.Element => {
 
     const navigate = useNavigate();
     const location = useLocation();
-    const initialValues = fromQueryString(location.search);
+    const initialValues: ProductsParams = fromQueryString(location.search);
 
-    const [param, setParam] = useState({});
+    const [param, setParam] = useState<ProductsParams>({});
 
     const onFiltersChange = (params: ProductsParams): void => {
         navigate(toQueryString(params));

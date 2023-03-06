@@ -16,11 +16,15 @@ interface IProps {
 export const FiltersSidebarDropdown = (props: IProps): JSX.Element => {
     const [isOpen, setIsOpen] = useState(false);
 
+    const onLabelClick = (): void => {
+        setIsOpen(!isOpen);
+    };
+
     return (
         <div>
-            <div className={clsx(props.activeCount ? s.nameActive : s.name)} onClick={() => setIsOpen(!isOpen)}>
+            <div className={clsx(props.activeCount ? s.nameActive : s.name)} onClick={onLabelClick}>
                 {props.label}
-                {props.activeCount ? <div className={s.count}>:&nbsp;{props.activeCount}</div> : null}
+                {props.activeCount && <div className={s.count}>:&nbsp;{props.activeCount}</div>}
                 <img src={chevron} alt='Chevron' className={s.chevron} />
             </div>
             {isOpen && (

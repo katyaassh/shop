@@ -14,7 +14,7 @@ export const Pagination = (props: IProps): JSX.Element => {
     const end = props.currentPage > props.pagesCount - 4;
     const isVisible = props.pagesCount > 6;
 
-    const pagesCounter = () => {
+    const pagesCounter = (): number[] => {
         if (start) {
             return Array.from({ length: isVisible ? 5 : props.pagesCount }, (v, i) => i + 1);
         } else if (middle) {
