@@ -9,10 +9,17 @@
     border-radius: 5px;
 }
 
+.imageContainer {
+    width: 100%;
+    min-height: 300px;
+    padding: 20px 20px 0 20px;
+    box-sizing: border-box;
+}
+
 .image {
-    width: 80%;
-    height: 80%;
-    margin: 20px auto 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .icon {
@@ -23,35 +30,6 @@
     &:hover {
         filter: brightness(0);
     }
-}
-
-.iconSection {
-    position: absolute;
-    flex-direction: column;
-    display: flex;
-    gap: 5px;
-    top: 10px;
-    left: 10px;
-}
-
-.novelty {
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    width: 100px;
-    height: 25px;
-    font-size: 15px;
-    background-color: #f7a399;
-}
-
-.sale {
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    width: 100px;
-    height: 25px;
-    font-size: 15px;
-    background-color: #caf0f8;
 }
 
 .content {
@@ -83,19 +61,4 @@
 .amountText {
     margin-bottom: 5px;
     font-size: 12px;
-}
-
-.offer {
-    display: flex;
-    height: 55px;
-}
-
-.cartButton {
-    width: 100%;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
-    color: white;
-    background-color: black;
-    border: none;
-    cursor: pointer;
 }

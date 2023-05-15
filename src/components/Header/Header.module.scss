@@ -119,23 +119,6 @@
     }
 }
 
-.counter {
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    width: 18px;
-    height: 17px;
-    font-size: 8px;
-    color: white;
-    background-color: black;
-    border-radius: 100%;
-
-    @media screen and (max-width: $tablet) {
-        color: black;
-        background-color: white;
-    }
-}
-
 .actionIcon {
     cursor: pointer;
     &:hover {

@@ -1,0 +1,37 @@
+@import 'src/variables';
+
+.productInOrder {
+    position: relative;
+    padding: 15px;
+    border: 1px solid $smoky-white;
+    border-radius: 5px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.image {
+    width: 100%;
+    min-height: 200px;
+    object-fit: contain;
+}
+
+.info {
+    flex-direction: column;
+    display: flex;
+    gap: 8px;
+}
+
+.name {
+    height: 50px;
+    margin-top: 10px;
+    font-weight: 700;
+}
+
+.perfumeType {
+    font-size: 14px;
+}
+
+.prise {
+    font-weight: 700;
+    font-size: 18px;
+}

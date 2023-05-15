@@ -1,0 +1,31 @@
+.personal {
+    width: 100%;
+}
+
+.label {
+    margin-top: 0;
+}
+
+.fields {
+    flex-direction: column;
+    display: flex;
+    gap: 15px;
+    max-width: 500px;
+    margin: 20px 0;
+}
+
+.message {
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: green;
+}
+
+.error {
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: red;
+}
+
+.button {
+    width: 100%;
+}

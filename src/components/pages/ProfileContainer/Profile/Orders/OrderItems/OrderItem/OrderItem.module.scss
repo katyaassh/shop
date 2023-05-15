@@ -1,0 +1,30 @@
+@import '../../../../../../../variables';
+
+.orderItem {
+    justify-content: space-between;
+    display: flex;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid $smoky-white;
+    cursor: pointer;
+}
+
+.left {
+    flex-direction: column;
+    display: flex;
+    gap: 10px;
+}
+
+.number {
+    font-size: 14px;
+}
+
+.prise {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.date {
+    font-size: 14px;
+    color: $gray;
+}

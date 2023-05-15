@@ -1,0 +1,106 @@
+@import 'src/variables';
+
+.cardItem {
+    display: flex;
+    height: 200px;
+    padding: 20px;
+    border: 1px solid $smoky-white;
+    box-sizing: border-box;
+
+    @media screen and (max-width: $tablet) {
+        height: 150px;
+    }
+
+    @media screen and (max-width: $mobile) {
+        height: 100%;
+    }
+}
+
+.content {
+    position: relative;
+    display: flex;
+
+    @media screen and (max-width: $mobile) {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
+.leftSection {
+    display: flex;
+    gap: 10px;
+
+    @media screen and (max-width: $mobile) {
+        height: 150px;
+    }
+
+    .info {
+        position: relative;
+        flex-direction: column;
+        justify-content: center;
+        display: flex;
+        gap: 5px;
+
+        .text {
+            font-size: 13px;
+            color: $gray;
+        }
+    }
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.specialOffersItems {
+    position: absolute;
+    flex-direction: row;
+    left: 0;
+    top: 0;
+}
+
+.rightSection {
+    justify-content: space-around;
+    display: flex;
+    width: 100%;
+
+    @media screen and (max-width: 750px) {
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    @media screen and (max-width: $mobile) {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+
+.counter {
+    width: 120px;
+    height: 40px;
+}
+
+.prise {
+    margin-top: 10px;
+    font-size: 14px;
+    color: $gray;
+}
+
+.fullPrise {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.clearButton {
+    height: 15px;
+    padding: 0;
+    font-size: 11px;
+    font-family: 'Montserrat', sans-serif;
+    background-color: inherit;
+    color: $gray;
+    border: none;
+    cursor: pointer;
+}

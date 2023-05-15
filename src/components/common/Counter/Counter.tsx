@@ -1,24 +1,43 @@
-import { useState } from 'react';
 import s from './Counter.module.scss';
+import { useState } from 'react';
+import clsx from 'clsx';
 
-export const Counter = (): JSX.Element => {
-    let [count, setCount] = useState(1);
+interface IProps {
+    className?: string;
+    countInCart?: number;
+    totalCount: number;
+    setCountInCart: (count: number) => void;
+    inCartItem?: boolean;
+}
 
-    const onMinusClick = () => {
+export const Counter = ({ className, countInCart, setCountInCart, inCartItem, totalCount }: IProps): JSX.Element => {
+    let [count, setCount] = useState(countInCart || 1);
+
+    const onMinusClick = (): void => {
         setCount(count - 1);
+        if (inCartItem) {
+            setCountInCart(-1);
+        } else {
+            setCountInCart(count - 1);
+        }
     };
 
-    const onPlusClick = () => {
+    const onPlusClick = (): void => {
         setCount(count + 1);
+        if (inCartItem) {
+            setCountInCart(1);
+        } else {
+            setCountInCart(count + 1);
+        }
     };
 
     return (
-        <div className={s.counter}>
-            <button onClick={onMinusClick} disabled={count === 1} className={s.button}>
+        <div className={clsx(className, s.counter)}>
+            <button onClick={onMinusClick} disabled={count === 1} className={s.countButton}>
                 -
             </button>
             {count}
-            <button onClick={onPlusClick} className={s.button}>
+            <button onClick={onPlusClick} className={s.countButton} disabled={count === totalCount}>
                 +
             </button>
         </div>

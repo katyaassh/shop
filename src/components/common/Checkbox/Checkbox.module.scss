@@ -37,3 +37,14 @@
     background-color: $gray;
     background-image: url('../../../assets/icons/check.svg');
 }
+
+.item {
+    position: relative;
+    align-items: center;
+    display: flex;
+    height: 27px;
+    padding: 0 5px;
+    &:hover {
+        background-color: $smoky-white;
+    }
+}

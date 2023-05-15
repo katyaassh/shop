@@ -42,10 +42,7 @@ export const FilterDropdown = (props: IProps): JSX.Element => {
             {isOpen && (
                 <div className={s.activeItems}>
                     {props.options.map((item: ICategoryItem) => (
-                        <div key={item._id} className={s.item}>
-                            <Checkbox value={item._id} name={props.category} id={item.type} />
-                            <label htmlFor={item.type}>{item.type}</label>
-                        </div>
+                        <Checkbox name={props.category} item={item} key={item._id} />
                     ))}
                 </div>
             )}

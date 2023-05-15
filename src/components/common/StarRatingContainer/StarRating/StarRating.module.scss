@@ -1,0 +1,21 @@
+.stars {
+    position: relative;
+}
+
+.greyStars {
+    display: flex;
+    gap: 5px;
+    height: 17px;
+}
+
+.greyStar {
+    cursor: pointer;
+}
+
+.blackStars {
+    position: absolute;
+    display: flex;
+    gap: 5px;
+    height: 17px;
+    pointer-events: none;
+}

@@ -1,7 +1,7 @@
 import s from './FiltersSidebarDropdown.module.scss';
 import chevron from '../../../../../../../assets/icons/chevron.svg';
 import { ICategoryItem } from '../../../../../../../models/category-item';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Checkbox } from '../../../../../../common/Checkbox/Checkbox';
 import clsx from 'clsx';
 
@@ -30,10 +30,7 @@ export const FiltersSidebarDropdown = (props: IProps): JSX.Element => {
             {isOpen && (
                 <div className={s.activeItems}>
                     {props.options.map((item: ICategoryItem) => (
-                        <div key={item._id} className={s.item}>
-                            <Checkbox value={item._id} name={props.category} id={item.type} />
-                            <label htmlFor={item.type}>{item.type}</label>
-                        </div>
+                        <Checkbox name={props.category} item={item} key={item._id} />
                     ))}
                 </div>
             )}
