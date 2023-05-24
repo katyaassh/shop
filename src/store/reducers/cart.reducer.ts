@@ -7,7 +7,7 @@ export const cartReducer = (state: ICartState = cartState, action: CartActions):
         case SET_COUNT: {
             return {
                 ...state,
-                count: state.count + action.payload,
+                count: action.payload ? state.count + action.payload : 0,
             };
         }
         default:

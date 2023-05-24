@@ -18,6 +18,7 @@ export const getSpecialOffers = (): ThunkAction<void, IState, null, Action<strin
             productsAPI.getProducts('?isDiscount=true'),
         ]);
 
-        dispatch(setSpecialOffers([responses[0].products, responses[1].products]));
+        const [isNovelty, isDiscount] = responses;
+        dispatch(setSpecialOffers([isNovelty.products, isDiscount.products]));
     };
 };

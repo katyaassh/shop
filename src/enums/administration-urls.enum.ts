@@ -1,4 +1,4 @@
-export enum AdministrationUrlsEnums {
+export enum AdministrationUrlsEnum {
     Products = 'products',
     Filters = 'filters',
 }

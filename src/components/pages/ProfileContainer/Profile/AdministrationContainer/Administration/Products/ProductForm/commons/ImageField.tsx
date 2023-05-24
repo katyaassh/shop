@@ -6,7 +6,7 @@ import { ChangeEvent, useState } from 'react';
 export const ImageField = (): JSX.Element => {
     const [_, meta, helpers] = useField('image');
 
-    const [image, setImage] = useState('');
+    const [image, setImage] = useState<string | ArrayBuffer | null>(null);
 
     const onImageChange = (e: ChangeEvent<HTMLInputElement>): void => {
         if (e.target.files) {
@@ -17,7 +17,7 @@ export const ImageField = (): JSX.Element => {
 
             reader.onload = (event) => {
                 if (event.target) {
-                    setImage(event.target.result as string);
+                    setImage(event.target.result);
                 }
             };
 
@@ -27,7 +27,7 @@ export const ImageField = (): JSX.Element => {
 
     return (
         <div className={s.addImage}>
-            <input name={'image'} type={'file'} accept='image/png, image/jpeg' onChange={(e) => onImageChange(e)} />
+            <input name={'image'} type={'file'} accept='image/png, image/jpeg' onChange={onImageChange} />
             {meta.value ? (
                 <img src={image ? image : meta.value} alt='productImage' className={s.image} />
             ) : (

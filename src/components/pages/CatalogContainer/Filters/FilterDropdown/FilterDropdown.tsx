@@ -17,9 +17,10 @@ interface IProps {
 }
 
 export const FilterDropdown = (props: IProps): JSX.Element => {
-    const [isOpen, setIsOpen] = useState(false);
     const ref = useRef<HTMLDivElement>(null);
     useClickOutside(ref, () => setIsOpen(false));
+
+    const [isOpen, setIsOpen] = useState(false);
 
     const onLabelClick = (): void => {
         setIsOpen(!isOpen);

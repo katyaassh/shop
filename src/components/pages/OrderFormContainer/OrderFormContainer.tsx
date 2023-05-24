@@ -17,39 +17,37 @@ export const OrderFormContainer = (): JSX.Element => {
     const dispatch: IDispatch = useDispatch();
     const navigate: NavigateFunction = useNavigate();
 
-    const [error, setError] = useState('');
-
     const user = useSelector(selectUser);
 
-    useEffect((): void => {
-        window.scrollTo(0, 0);
-        dispatch(getUser());
-    }, []);
+    const [error, setError] = useState('');
 
-    const cart = getCart();
+    const onSubmit = async (values: IOrderValues): Promise<void> => {
+        const cart = getCart();
 
-    let productIds: string[] = [];
-    cart &&
-        cart.forEach((product: IProductInCart) => {
-            for (let i = 0; i < product.count; i++) productIds.push(product.product.id);
-        });
-
-    const onSubmit = (values: IOrderValues): void => {
-        ordersApi
-            .addOrder({ products: productIds, address: user.address, ...values })
-            .then((response) => {
-                localStorage.removeItem('cart');
-                dispatch(setCount(-1));
-                navigate(PagesUrlsEnum.Profile + '/' + ProfileUrlsEnums.Orders + '/' + response.orderId);
-            })
-            .catch((error) => {
-                setError(error.response.data.message);
+        let productIds: string[] = [];
+        cart &&
+            cart.forEach((product: IProductInCart) => {
+                for (let i = 0; i < product.count; i++) productIds.push(product.product.id);
             });
+
+        try {
+            const response = await ordersApi.addOrder({ products: productIds, address: user.address, ...values });
+            localStorage.removeItem('cart');
+            dispatch(setCount(0));
+            navigate(PagesUrlsEnum.Profile + '/' + ProfileUrlsEnums.Orders + '/' + response.orderId);
+        } catch (e: any) {
+            setError(e.response.data.message);
+        }
     };
 
     const onChangeClick = (): void => {
         navigate(PagesUrlsEnum.Profile);
     };
+
+    useEffect((): void => {
+        window.scrollTo(0, 0);
+        dispatch(getUser());
+    }, []);
 
     return <OrderForm user={user} onSubmit={onSubmit} onChangeClick={onChangeClick} error={error} />;
 };

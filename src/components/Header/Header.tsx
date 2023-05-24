@@ -13,7 +13,7 @@ import { IDispatch } from '../../store/types/types';
 import { NavLink } from 'react-router-dom';
 import { PagesUrlsEnum } from '../../enums/pages-urls.enum';
 import { ProfileUrlsEnums } from '../../enums/profile-urls.enums';
-import { Count } from '../common/Count/Count';
+import { SmallCounter } from '../common/SmallCounter/SmallCounter';
 
 export const Header = (): JSX.Element => {
     const dispatch: IDispatch = useDispatch();
@@ -47,7 +47,7 @@ export const Header = (): JSX.Element => {
                     </div>
                     <NavLink to={`${PagesUrlsEnum.Profile}/${ProfileUrlsEnums.Cart}`} className={s.action}>
                         <img src={cart} alt='CartContainer' className={s.actionIcon} />
-                        <Count />
+                        <SmallCounter />
                     </NavLink>
                     <NavLink to={PagesUrlsEnum.Profile} className={s.action}>
                         <img src={user} alt='SignIn' className={s.actionIcon} />

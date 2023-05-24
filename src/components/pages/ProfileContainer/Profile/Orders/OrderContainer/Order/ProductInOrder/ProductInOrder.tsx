@@ -4,7 +4,6 @@ import { SpecialOffersItems } from '../../../../../../../common/SpecialOffersIte
 
 interface IProps {
     product: INewProductInOrder;
-    key: string;
     onProductClick: (id: string) => void;
 }
 

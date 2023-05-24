@@ -3,7 +3,6 @@ import s from './OrderItem.module.scss';
 
 interface IProps {
     order: IOrderType;
-    key: string;
     onClick: (id: string) => void;
 }
 

@@ -21,12 +21,6 @@ interface IProps {
 export const Personal = (props: IProps): JSX.Element => {
     const [userData, setUserData] = useState<IUser | null>(null);
 
-    useEffect(() => {
-        if (props.user) {
-            setUserData(props.user);
-        }
-    }, [props.user]);
-
     const initialValues: IUserValues = {
         name: userData?.name || '',
         lastname: userData?.lastname || '',
@@ -36,11 +30,17 @@ export const Personal = (props: IProps): JSX.Element => {
         newPassword: '',
     };
 
+    useEffect(() => {
+        if (props.user) {
+            setUserData(props.user);
+        }
+    }, [props.user]);
+
     return (
         <div className={s.personal}>
             <h2 className={s.label}>Профиль</h2>
             <Formik initialValues={initialValues} onSubmit={props.onSubmit} enableReinitialize={true}>
-                {({ handleSubmit, errors, touched }) => (
+                {({ errors, touched }) => (
                     <Form className={s.form}>
                         <div className={s.fields}>
                             <Input
@@ -83,12 +83,9 @@ export const Personal = (props: IProps): JSX.Element => {
                                 {props.message}
                             </div>
                         )}
-                        <MainButton
-                            title={'Сохранить изменения'}
-                            onClick={() => handleSubmit}
-                            type='submit'
-                            className={s.button}
-                        />
+                        <MainButton type='submit' className={s.button}>
+                            Сохранить изменения
+                        </MainButton>
                     </Form>
                 )}
             </Formik>

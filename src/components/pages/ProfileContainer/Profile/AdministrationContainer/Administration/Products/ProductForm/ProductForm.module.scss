@@ -15,6 +15,10 @@
     object-fit: contain;
 }
 
+.topFields {
+    display: flex;
+}
+
 .fields {
     flex-direction: column;
     display: flex;
@@ -44,9 +48,15 @@
 .filters {
     justify-content: space-between;
     display: flex;
+    margin: 20px 0 20px 0;
 }
 
 .specialOffers {
     flex-direction: column;
     display: flex;
+
+    .title {
+        margin-bottom: 10px;
+        font-size: 18px;
+    }
 }

@@ -24,6 +24,7 @@ interface IProps {
 
 export const Catalog = (props: IProps): JSX.Element => {
     const [isOpen, setIsOpen] = useState(false);
+    const isTablet = useMediaQuery(992);
 
     const onFiltersOpenClick = (): void => {
         setIsOpen(true);
@@ -32,8 +33,6 @@ export const Catalog = (props: IProps): JSX.Element => {
     const onFiltersClose = (): void => {
         setIsOpen(false);
     };
-
-    const isTablet = useMediaQuery(992);
 
     return (
         <div className={clsx(s.catalog, 'container')}>

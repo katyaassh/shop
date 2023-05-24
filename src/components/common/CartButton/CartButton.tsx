@@ -22,11 +22,15 @@ export const CartButton = ({ onCartClick, setCountInCart, totalCount, isInCart }
     return (
         <>
             {isInCart ? (
-                <MainButton title={'Перейти в корзину'} onClick={onToCartClick} className={s.toCartButton} />
+                <MainButton onClick={onToCartClick} className={s.toCartButton}>
+                    Перейти в корзину
+                </MainButton>
             ) : (
                 <div className={s.cartButton}>
                     <Counter setCountInCart={setCountInCart} totalCount={totalCount} />
-                    <MainButton title={'В корзину'} className={s.button} onClick={onCartClick} />
+                    <MainButton className={s.button} onClick={onCartClick}>
+                        В корзину
+                    </MainButton>
                 </div>
             )}
         </>

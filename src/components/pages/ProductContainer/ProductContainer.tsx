@@ -12,29 +12,27 @@ import { setCount } from '../../../store/actions/cart.actions';
 
 export const ProductContainer = (): JSX.Element => {
     const params = useParams();
-
     const dispatch: IDispatch = useDispatch();
 
+    const product = useSelector(selectProduct);
+
     const [isInCart, setIsInCart] = useState(false);
+    const [countInCart, setCountInCart] = useState(1);
 
     const addNewComment = (data: ICommentData): void => {
         dispatch(addComment(params.id, data));
     };
-
-    useEffect(() => {
-        dispatch(getProduct(params.id));
-        window.scrollTo(0, 0);
-    }, []);
-
-    const product = useSelector(selectProduct);
-
-    const [countInCart, setCountInCart] = useState(1);
 
     const onCartClick = (): void => {
         setInCart(toCartItem(product), countInCart);
         dispatch(setCount(countInCart));
         setIsInCart(true);
     };
+
+    useEffect(() => {
+        dispatch(getProduct(params.id));
+        window.scrollTo(0, 0);
+    }, []);
 
     return (
         <Product

@@ -24,7 +24,9 @@ export const UserInfo = ({ user, onChangeClick }: IProps): JSX.Element => {
                 <div className={s.title}>Адрес доставки</div>
                 {user.address ? <div className={s.address}>{user.address}</div> : <div className={s.address}>Нет адреса</div>}
             </div>
-            <MainButton title={'Изменить'} className={s.button} onClick={onChangeClick} />
+            <MainButton className={s.button} onClick={onChangeClick}>
+                Изменить
+            </MainButton>
         </div>
     );
 };

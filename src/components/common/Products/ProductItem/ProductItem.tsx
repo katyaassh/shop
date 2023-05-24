@@ -21,7 +21,6 @@ export const ProductItem = (props: IProps): JSX.Element => {
     const dispatch: IDispatch = useDispatch();
 
     const [isInCart, setIsInCart] = useState(false);
-
     const [countInCart, setCountInCart] = useState(1);
 
     const onCartClick = (): void => {
@@ -33,9 +32,9 @@ export const ProductItem = (props: IProps): JSX.Element => {
     return (
         <div className={s.product}>
             <NavLink to={PagesUrlsEnum.Catalog + '/' + props.product._id} className={s.imageContainer}>
-                <img src={props.product.image} alt='' className={s.image} />
+                <img src={props.product.image} alt='Product' className={s.image} />
             </NavLink>
-            <img src={like} alt='' className={s.icon} />
+            <img src={like} alt='Like' className={s.icon} />
             <SpecialOffersItems isNovelty={props.product.isNovelty} isDiscount={props.product.isDiscount} />
             <div className={s.content}>
                 <StarRating stars={props.product.stars} />

@@ -4,13 +4,11 @@ import { Form, Formik } from 'formik';
 import { Input } from '../../../common/Input/Input';
 import { MainButton } from '../../../common/MainButton/MainButton';
 import { ISignInData } from '../../../../models/signIn-data';
-import { NavigateFunction, useNavigate } from 'react-router-dom';
-import { PagesUrlsEnum } from '../../../../enums/pages-urls.enum';
 import { required } from '../../../../validators/required';
 
 interface IProps {
-    onClose: () => void;
     onSignInClick: (data: ISignInData) => void;
+    onSignUpClick: () => void;
     error: string;
 }
 
@@ -19,28 +17,21 @@ interface SignInValues {
     password: string;
 }
 
-export const SignIn = (props: IProps): JSX.Element => {
-    const navigate: NavigateFunction = useNavigate();
-
+export const SignIn = ({ onSignUpClick, onSignInClick, error }: IProps): JSX.Element => {
     const initialValues: SignInValues = {
         email: '',
         password: '',
     };
 
-    const onSignUpClick = (): void => {
-        navigate(PagesUrlsEnum.SignUp);
-        props.onClose();
-    };
-
     const onSubmit = (values: SignInValues): void => {
-        props.onSignInClick(values);
+        onSignInClick(values);
     };
 
     return (
         <div className={clsx('container', s.signIn)}>
             <div className={s.label}>Личный кабинет</div>
             <Formik initialValues={initialValues} onSubmit={onSubmit}>
-                {({ handleSubmit, errors, touched }) => (
+                {({ errors, touched }) => (
                     <Form className={s.form}>
                         <div className={s.fields}>
                             <Input
@@ -61,12 +52,12 @@ export const SignIn = (props: IProps): JSX.Element => {
                             />
                         </div>
                         <div className={s.buttons}>
-                            <MainButton title={'Войти'} onClick={() => handleSubmit} type='submit' />
+                            <MainButton type='submit'>Войти</MainButton>
                             <button type='button' className={s.signUpButton} onClick={onSignUpClick}>
                                 Регистрация
                             </button>
                         </div>
-                        {props.error && <div className={s.error}>{props.error}</div>}
+                        {error && <div className={s.error}>{error}</div>}
                     </Form>
                 )}
             </Formik>

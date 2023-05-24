@@ -13,7 +13,6 @@ import { getCart } from '../../../../../helpers/getCart';
 
 export const CartContainer = (): JSX.Element => {
     const dispatch: IDispatch = useDispatch();
-
     const navigate: NavigateFunction = useNavigate();
 
     const [cart, setCart] = useState(getCart);
@@ -27,7 +26,7 @@ export const CartContainer = (): JSX.Element => {
     const onClearCartClick = (): void => {
         localStorage.removeItem('cart');
         setCart(getCart());
-        dispatch(setCount(-1));
+        dispatch(setCount(0));
     };
 
     const onClearItemClick = (id: string): void => {
@@ -36,17 +35,15 @@ export const CartContainer = (): JSX.Element => {
         dispatch(setCount(-1));
     };
 
-    let fullPrise = 0;
-
     const onOrderClick = (): void => {
         navigate('/' + PagesUrlsEnum.OrderForm);
     };
 
-    cart &&
-        cart.length &&
-        cart.forEach((product: IProductInCart) => {
-            fullPrise += product.count * product.product.fullPrise;
-        });
+    const fullPrise = cart?.length
+        ? cart?.reduce((sum: number, product: IProductInCart) => {
+              return sum + product.count * product.product.fullPrise;
+          }, 0)
+        : 0;
 
     return (
         <Cart

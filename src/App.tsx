@@ -12,7 +12,7 @@ import { RequireAuth } from './components/common/RequireAuth/RequireAuth';
 import { ProfileUrlsEnums } from './enums/profile-urls.enums';
 import { Orders } from './components/pages/ProfileContainer/Profile/Orders/Orders';
 import { CartContainer } from './components/pages/ProfileContainer/Profile/CartContainer/CartContainer';
-import { AdministrationUrlsEnums } from './enums/administration-urls.enums';
+import { AdministrationUrlsEnum } from './enums/administration-urls.enum';
 import { ProductsContainer } from './components/pages/ProfileContainer/Profile/AdministrationContainer/Administration/Products/ProductsContainer';
 import { Administration } from './components/pages/ProfileContainer/Profile/AdministrationContainer/Administration/Administration';
 import { ProductForm } from './components/pages/ProfileContainer/Profile/AdministrationContainer/Administration/Products/ProductForm/ProductForm';
@@ -108,12 +108,12 @@ function App(): JSX.Element {
                                     }
                                 >
                                     <Route index element={<Administration />} />
-                                    <Route path={AdministrationUrlsEnums.Products} element={<ProductsContainer />}>
+                                    <Route path={AdministrationUrlsEnum.Products} element={<ProductsContainer />}>
                                         <Route index element={<Products />} />
                                         <Route path={'productForm'} element={<ProductForm />} />
                                         <Route path={`productForm/:id`} element={<ProductForm />} />
                                     </Route>
-                                    <Route path={AdministrationUrlsEnums.Filters} element={<Filters />} />
+                                    <Route path={AdministrationUrlsEnum.Filters} element={<Filters />} />
                                 </Route>
                             </Route>
                         </Routes>

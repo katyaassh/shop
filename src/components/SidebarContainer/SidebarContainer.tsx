@@ -11,19 +11,9 @@ import { useLocation } from 'react-router-dom';
 
 export const SidebarContainer = (): JSX.Element => {
     const { pathname } = useLocation();
-
-    const isOpen: boolean = useSelector(selectIsOpenSidebar);
     const dispatch: IDispatch = useDispatch();
 
-    useEffect((): void => {
-        if (isOpen) {
-            dispatch(closeSidebar());
-        }
-    }, [pathname]);
-
-    useEffect((): void => {
-        dispatch(getGenders());
-    }, []);
+    const isOpen: boolean = useSelector(selectIsOpenSidebar);
 
     const onClose = (): void => {
         dispatch(closeSidebar());
@@ -36,6 +26,16 @@ export const SidebarContainer = (): JSX.Element => {
     const onBackClick = (): void => {
         dispatch(setCurrentPageSidebar(SidebarContentIdsEnum.Main));
     };
+
+    useEffect((): void => {
+        if (isOpen) {
+            dispatch(closeSidebar());
+        }
+    }, [pathname]);
+
+    useEffect((): void => {
+        dispatch(getGenders());
+    }, []);
 
     return (
         <Overlay isOpen={isOpen} onClose={onClose}>

@@ -1,6 +1,6 @@
 import { EditProductValues } from '../models/edit-product-values';
 
-export const formDataCreator = (values: EditProductValues, formData: FormData): void => {
+export const fillProductFormData = (values: EditProductValues, formData: FormData): void => {
     const { image, fragrance, ...restData } = values;
 
     formData.append('image', image);

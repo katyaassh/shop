@@ -10,20 +10,15 @@ import { PagesUrlsEnum } from '../../../../../../enums/pages-urls.enum';
 
 export const OrderContainer = (): JSX.Element => {
     const params = useParams();
-
     const dispatch: IDispatch = useDispatch();
     const navigate: NavigateFunction = useNavigate();
-
-    useEffect(() => {
-        dispatch(getOrder(params.id));
-    }, []);
 
     const order = useSelector(selectOrder);
 
     const newProducts: INewProductInOrder[] = order.products.reduce((result: INewProductInOrder[], product) => {
-        const isHave = result.find((newProduct) => newProduct.product._id === product._id);
+        const productInOrder = result.find((newProduct) => newProduct.product._id === product._id);
 
-        if (!isHave) {
+        if (!productInOrder) {
             result.push({ product: product, count: 1 });
         } else {
             result.forEach((newProduct) => newProduct.product._id === product._id && newProduct.count++);
@@ -34,6 +29,10 @@ export const OrderContainer = (): JSX.Element => {
     const onProductClick = (id: string): void => {
         navigate(PagesUrlsEnum.Catalog + '/' + id);
     };
+
+    useEffect(() => {
+        dispatch(getOrder(params.id));
+    }, []);
 
     return <Order order={order} products={newProducts} onProductClick={onProductClick} />;
 };

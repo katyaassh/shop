@@ -15,6 +15,8 @@ import { selectPage, selectPageCount, selectProducts, selectTotalCount } from '.
 
 export const CatalogContainer = (): JSX.Element => {
     const dispatch: IDispatch = useDispatch();
+    const navigate: NavigateFunction = useNavigate();
+    const location: Location = useLocation();
 
     const filters: ICategory[] = useSelector(selectFilters);
     const products: IProductItem[] = useSelector(selectProducts);
@@ -22,11 +24,9 @@ export const CatalogContainer = (): JSX.Element => {
     const pageCount: number = useSelector(selectPageCount);
     const page: number = useSelector(selectPage);
 
-    const navigate: NavigateFunction = useNavigate();
-    const location: Location = useLocation();
-    const initialValues: ProductsParams = fromQueryString(location.search);
-
     const [param, setParam] = useState<ProductsParams>({});
+
+    const initialValues: ProductsParams = fromQueryString(location.search);
 
     const onFiltersChange = (params: ProductsParams): void => {
         navigate(toQueryString(params));

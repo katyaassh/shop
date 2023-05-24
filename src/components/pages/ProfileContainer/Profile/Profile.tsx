@@ -33,7 +33,9 @@ export const Profile = ({ onLogOutClick }: IProps): JSX.Element => {
                             Администрация
                         </NavLink>
                     )}
-                    <MainButton title={'Выйти'} onClick={onLogOutClick} className={s.button} />
+                    <MainButton onClick={onLogOutClick} className={s.button}>
+                        Выйти
+                    </MainButton>
                 </div>
                 <div className={s.outlet}>
                     <Outlet />

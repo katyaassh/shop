@@ -2,7 +2,7 @@ import axios from 'axios';
 import { AxiosResponse } from 'axios';
 import { IAddressesResponse } from '../models/address-response';
 
-export const instance = axios.create({
+const instance = axios.create({
     baseURL: 'https://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/address',
 });
 

@@ -8,19 +8,15 @@ import { useDebounce } from '../../../../../hooks/useDebounce';
 import { addressAPI } from '../../../../../api/address.api';
 
 export const PersonalContainer = (): JSX.Element => {
-    const [message, setMessage] = useState('');
-
     const user = useSelector(selectUser);
 
+    const [message, setMessage] = useState('');
     const [suggestions, setSuggestions] = useState<string[]>([]);
 
-    const getAddresses = (value: string): void => {
-        addressAPI.getAddress(value).then((response) => {
-            const suggestions = response.suggestions.map((item) => {
-                return item.value;
-            });
-            setSuggestions(suggestions);
-        });
+    const getAddresses = async (value: string): Promise<void> => {
+        const response = await addressAPI.getAddress(value);
+        const suggestions = response.suggestions.map((item) => item.value);
+        setSuggestions(suggestions);
     };
 
     const getDelayAddresses = useDebounce(getAddresses);
@@ -29,15 +25,13 @@ export const PersonalContainer = (): JSX.Element => {
         getDelayAddresses(value);
     };
 
-    const onSubmit = (values: IUserValues): void => {
-        userAPI
-            .updateUser(values)
-            .then((_) => {
-                setMessage('Изменения сохранены!');
-            })
-            .catch((e) => {
-                setMessage(e.response.data.message);
-            });
+    const onSubmit = async (values: IUserValues): Promise<void> => {
+        try {
+            await userAPI.updateUser(values);
+            setMessage('Изменения сохранены!');
+        } catch (e: any) {
+            setMessage(e.response.data.message);
+        }
     };
 
     return (

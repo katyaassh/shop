@@ -16,23 +16,19 @@ export const CommentForm = ({ addNewComment }: IProps): JSX.Element => {
     };
 
     return (
-        <div>
-            <Formik onSubmit={onSubmit} initialValues={{ comment: '', stars: 1 }}>
-                {({ handleSubmit }) => (
-                    <Form>
-                        <div className={s.commentForm}>
-                            <Field name={'comment'} placeholder={'Оставьте отзыв'} className={s.input} as={'textarea'} />
-                            <div className={s.actions}>
-                                <div className={s.rating}>
-                                    <div>Оценка:</div>
-                                    <StarRatingContainer />
-                                </div>
-                                <MainButton onClick={() => handleSubmit} title={'Отправить'} type={'submit'} />
-                            </div>
+        <Formik onSubmit={onSubmit} initialValues={{ comment: '', stars: 1 }}>
+            <Form>
+                <div className={s.commentForm}>
+                    <Field name={'comment'} placeholder={'Оставьте отзыв'} className={s.input} as={'textarea'} />
+                    <div className={s.actions}>
+                        <div className={s.rating}>
+                            <div>Оценка:</div>
+                            <StarRatingContainer />
                         </div>
-                    </Form>
-                )}
-            </Formik>
-        </div>
+                        <MainButton type={'submit'}>Отправить</MainButton>
+                    </div>
+                </div>
+            </Form>
+        </Formik>
     );
 };

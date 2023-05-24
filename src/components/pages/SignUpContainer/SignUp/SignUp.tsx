@@ -36,7 +36,7 @@ export const SignUp = (props: IProps): JSX.Element => {
         <div className={clsx('container', s.signUp)}>
             <div className={s.label}>Регистрация</div>
             <Formik initialValues={initialValues} onSubmit={onSubmit}>
-                {({ handleSubmit, errors, touched }) => (
+                {({ errors, touched }) => (
                     <Form className={s.form}>
                         <div className={s.fields}>
                             <Input
@@ -72,12 +72,9 @@ export const SignUp = (props: IProps): JSX.Element => {
                                 touched={touched.password}
                             />
                         </div>
-                        <MainButton
-                            title={'Зарегистрироваться'}
-                            onClick={() => handleSubmit}
-                            type='submit'
-                            className={s.button}
-                        />
+                        <MainButton type='submit' className={s.button}>
+                            Зарегистрироваться
+                        </MainButton>
                         {props.error && <div className={s.error}>{props.error}</div>}
                     </Form>
                 )}

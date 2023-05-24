@@ -1,13 +1,13 @@
 import { useState } from 'react';
 
-export const useDebounce = (funk: any) => {
+export const useDebounce = (callback: (...args: any) => any): ((...args: any) => () => void) => {
     const [timeOutId, setTimeOutId] = useState<ReturnType<typeof setTimeout> | undefined>(undefined);
 
     return (...args: any) => {
         clearTimeout(timeOutId);
 
         const id = setTimeout(() => {
-            funk(...args);
+            callback(...args);
         }, 500);
 
         setTimeOutId(id);

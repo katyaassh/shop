@@ -1,9 +1,9 @@
 import s from './Counter.module.scss';
 import { useState } from 'react';
 import clsx from 'clsx';
+import { IWithClassName } from '../../../models/withClassName';
 
-interface IProps {
-    className?: string;
+interface IProps extends IWithClassName {
     countInCart?: number;
     totalCount: number;
     setCountInCart: (count: number) => void;

@@ -16,7 +16,7 @@ export const filtersReducer = (state: IFiltersState = filtersState, action: Filt
                 filters: state.filters
                     ? state.filters.map((filter) => {
                           if (filter.category === action.payload.category) {
-                              filter = action.payload;
+                              return action.payload;
                           }
                           return filter;
                       })

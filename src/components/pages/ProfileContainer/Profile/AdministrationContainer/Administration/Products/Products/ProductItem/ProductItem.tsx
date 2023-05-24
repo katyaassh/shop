@@ -8,11 +8,9 @@ interface IProps {
 }
 
 export const ProductItem = ({ product, onEditButtonClick }: IProps): JSX.Element => {
-    const onDeleteClick = (id: string): void => {
-        productsAPI.deleteProduct(id).then((response) => {
-            alert('Продукт удален!');
-            return response;
-        });
+    const onDeleteClick = async (id: string): Promise<void> => {
+        await productsAPI.deleteProduct(id);
+        alert('Продукт удален!');
     };
 
     return (

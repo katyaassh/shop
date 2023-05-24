@@ -8,7 +8,6 @@ import { ICartItem } from '../../../../../../../models/cart-item';
 
 interface IProps {
     product: IProductInCart;
-    key: string;
     setCountInCart: (product: ICartItem, count: number) => void;
     onClearItemClick: (id: string) => void;
 }
@@ -22,7 +21,7 @@ export const CartItem = ({ product, setCountInCart, onClearItemClick }: IProps):
         onClearItemClick(product.product.id);
     };
 
-    const fullPrise = product.product.fullPrise * product.count;
+    const sum = product.product.fullPrise * product.count;
 
     return (
         <div className={s.cardItem}>
@@ -53,7 +52,7 @@ export const CartItem = ({ product, setCountInCart, onClearItemClick }: IProps):
                         />
                         <div className={s.prise}>{product.product.fullPrise} Р/шт</div>
                     </div>
-                    <div className={s.fullPrise}>{fullPrise} Р</div>
+                    <div className={s.fullPrise}>{sum} Р</div>
                 </div>
             </div>
             <button className={s.clearButton} onClick={onClick}>

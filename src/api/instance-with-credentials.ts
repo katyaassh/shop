@@ -2,11 +2,7 @@ import axios, { AxiosHeaders, AxiosRequestConfig } from 'axios';
 import jwtDecode, { JwtPayload } from 'jwt-decode';
 import { authAPI } from './auth.api';
 import { saveTokens } from '../helpers/saveTokens';
-
-const clearTokens = () => {
-    localStorage.removeItem('token');
-    localStorage.removeItem('refreshToken');
-};
+import { clearTokens } from '../helpers/clearTokens';
 
 const getTokens = () => {
     const token = localStorage.getItem('token');

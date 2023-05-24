@@ -13,6 +13,8 @@ export const AddressesField = (props: IProps): JSX.Element => {
     const ref = useRef<HTMLDivElement>(null);
     useClickOutside(ref, () => setIsOpen(false));
 
+    const [isOpen, setIsOpen] = useState(false);
+
     const [_, meta, helpers] = useField('address');
 
     const onAddressChange = (value: string): void => {
@@ -20,17 +22,13 @@ export const AddressesField = (props: IProps): JSX.Element => {
         props.onAddressesChange(value);
     };
 
-    const [isOpen, setIsOpen] = useState(false);
-
     const onAddressClick = (value: string): void => {
         helpers.setValue(value);
         setIsOpen(false);
     };
 
     useEffect(() => {
-        if (props.suggestions.length) {
-            setIsOpen(true);
-        } else setIsOpen(false);
+        setIsOpen(!!props.suggestions.length);
     }, [props.suggestions]);
 
     return (

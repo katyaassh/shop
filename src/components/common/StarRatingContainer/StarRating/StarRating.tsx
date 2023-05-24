@@ -23,7 +23,7 @@ export const StarRating = ({ stars, onStarClick }: IProps): JSX.Element => {
         <div className={s.stars}>
             <div className={s.blackStars} style={blackStarsStyles}>
                 {starsCount.slice(0, 5).map((star) => (
-                    <img key={star} src={blackStar} alt='' />
+                    <img key={star} src={blackStar} alt='blackStar' />
                 ))}
             </div>
             <div className={s.greyStars}>
@@ -31,7 +31,7 @@ export const StarRating = ({ stars, onStarClick }: IProps): JSX.Element => {
                     <img
                         key={star}
                         src={greyStar}
-                        alt=''
+                        alt='greyStar'
                         onClick={() => onStarClick && onStarClick(star)}
                         className={onStarClick ? s.greyStar : ''}
                     />

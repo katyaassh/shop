@@ -6,9 +6,9 @@ import { NavigateFunction, useNavigate } from 'react-router-dom';
 import { OrderItem } from './OrderItem/OrderItem';
 
 export const OrderItems = (): JSX.Element => {
-    const { orders } = useSelector(selectUser);
-
     const navigate: NavigateFunction = useNavigate();
+
+    const { orders } = useSelector(selectUser);
 
     const onClick = (id: string): void => {
         navigate(id);

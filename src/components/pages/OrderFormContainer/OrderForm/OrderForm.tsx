@@ -81,7 +81,9 @@ export const OrderForm = ({ user, onSubmit, onChangeClick, error }: IProps): JSX
                             </div>
                         </div>
                         {error && <div className={s.error}>{error}</div>}
-                        <MainButton title={'Оформить заказ'} type={'submit'} className={s.button} />
+                        <MainButton type={'submit'} className={s.button}>
+                            Оформить заказ
+                        </MainButton>
                     </Form>
                 )}
             </Formik>

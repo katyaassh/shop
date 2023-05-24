@@ -7,9 +7,5 @@ export const StarRatingContainer = (): JSX.Element => {
     const { value } = meta;
     const { setValue } = helpers;
 
-    const onStarClick = (num: number): void => {
-        setValue(num);
-    };
-
-    return <StarRating stars={value} onStarClick={onStarClick} />;
+    return <StarRating stars={value} onStarClick={setValue} />;
 };

@@ -4,6 +4,8 @@ import React, { useEffect } from 'react';
 import { IDispatch } from '../../../../../../../store/types/types';
 import { addFilters, getFilters } from '../../../../../../../store/thunks/filters.thunks';
 import { FiltersForm } from './FiltersForm/FiltersForm';
+import { IFiltersFormValues } from '../../../../../../../models/filters-form-values';
+import s from './Filters.module.scss';
 
 export const Filters = (): JSX.Element => {
     const dispatch: IDispatch = useDispatch();
@@ -14,13 +16,9 @@ export const Filters = (): JSX.Element => {
         dispatch(getFilters());
     }, []);
 
-    delete filters[0];
+    const newFilters = filters.splice(1);
 
-    interface IFilterValues {
-        [key: string]: string;
-    }
-
-    const onSubmit = (values: IFilterValues, { resetForm }: any) => {
+    const onSubmit = (values: IFiltersFormValues, { resetForm }: any) => {
         const category = Object.keys(values);
         const type = Object.values(values);
 
@@ -31,8 +29,8 @@ export const Filters = (): JSX.Element => {
     return (
         <div>
             <p>Фильтры</p>
-            <div style={{ display: 'flex', width: 100 + '%', gap: 15 }}>
-                {filters.map((filter) => (
+            <div className={s.filters}>
+                {newFilters.map((filter) => (
                     <FiltersForm onSubmit={onSubmit} filter={filter} key={filter.name} />
                 ))}
             </div>

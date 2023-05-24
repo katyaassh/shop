@@ -41,7 +41,7 @@ export const Cart = ({
                         />
                     ))}
                     <div className={s.fullPrise}>Итого: {fullPrise} P</div>
-                    <MainButton title={'Перейти к оформлению'} onClick={onOrderClick} />
+                    <MainButton onClick={onOrderClick}>Перейти к оформлению</MainButton>
                 </div>
             ) : (
                 <div className={s.emptyCart}>Коризина пуста</div>

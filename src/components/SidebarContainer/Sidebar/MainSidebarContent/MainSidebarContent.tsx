@@ -34,7 +34,7 @@ export const MainSidebarContent = (props: IProps): JSX.Element => {
                     title={'Корзина'}
                     icon={cart}
                     to={`${PagesUrlsEnum.Profile}/${ProfileUrlsEnums.Cart}`}
-                    haveCount={true}
+                    hasCount={true}
                 />
                 <MainSidebarLinkItem title={'Заказы'} icon={box} to={`${PagesUrlsEnum.Profile}/${ProfileUrlsEnums.Orders}`} />
                 <PhoneNumberSidebar />
