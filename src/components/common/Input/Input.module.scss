@@ -1,0 +1,28 @@
+@import 'src/variables';
+
+.topSection {
+    justify-content: space-between;
+    display: flex;
+}
+
+.label {
+    font-size: 13px;
+    color: $gray;
+}
+
+.error {
+    font-size: 11px;
+    color: red;
+}
+
+.input {
+    width: 100%;
+    height: 45px;
+    padding: 8px 13px;
+    margin-top: 5px;
+    font-family: 'Montserrat', sans-serif;
+    background-color: $smoky-white;
+    border: 1px solid $light-gray;
+    border-radius: 5px;
+    box-sizing: border-box;
+}

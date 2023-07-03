@@ -1,0 +1,24 @@
+@import 'src/variables';
+
+.suggestions {
+    position: absolute;
+    flex-direction: column;
+    display: flex;
+    width: 500px;
+    background-color: white;
+    border: 1px solid $light-gray;
+    border-radius: 5px;
+}
+
+.suggestion {
+    position: relative;
+    align-items: center;
+    display: flex;
+    min-height: 30px;
+    height: 100%;
+    padding: 0 5px;
+    cursor: pointer;
+    &:hover {
+        background-color: $smoky-white;
+    }
+}

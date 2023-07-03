@@ -1,0 +1,35 @@
+@import 'src/variables';
+
+.infoItems {
+    justify-content: center;
+    display: flex;
+    gap: 15px;
+    padding: 10px 0;
+    margin-top: 30px;
+    font-size: 12px;
+    border-top: 1px solid $smoky-white;
+    border-bottom: 1px solid $smoky-white;
+
+    @media screen and (max-width: $tablet) {
+        flex-wrap: wrap;
+    }
+}
+
+.item {
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    width: 230px;
+
+    @media screen and (max-width: $tablet) {
+        width: 40%;
+    }
+}
+
+.image {
+    width: 40px;
+}
+
+.boldText {
+    font-weight: bold;
+}

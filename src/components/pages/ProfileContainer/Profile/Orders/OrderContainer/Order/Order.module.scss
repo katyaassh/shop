@@ -1,0 +1,77 @@
+@import 'src/variables';
+
+.order {
+    margin-top: 15px;
+}
+
+.content {
+    display: flex;
+    gap: 50px;
+}
+
+.label {
+    width: 150px;
+}
+
+.items {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: repeat(8, auto);
+    gap: 15px;
+    width: 100%;
+}
+
+.prise {
+    font-weight: 700;
+}
+
+.label {
+    width: 100px;
+}
+
+.state {
+    color: green;
+}
+
+.historyItems {
+    flex-direction: column;
+    display: flex;
+    gap: 10px;
+}
+
+.historyItem {
+    align-items: center;
+    display: flex;
+    gap: 5px;
+}
+
+.activeHistoryItemText {
+    flex-direction: column;
+    display: flex;
+    gap: 5px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.historyItemText {
+    flex-direction: column;
+    display: flex;
+    gap: 5px;
+    font-size: 14px;
+    color: $gray;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 15px;
+
+    @media screen and (max-width: 755px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media screen and (max-width: 520px) {
+        grid-template-columns: 1fr;
+    }
+}

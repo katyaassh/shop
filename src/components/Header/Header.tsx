@@ -2,7 +2,6 @@ import logo from '../../assets/image/logo.svg';
 import search from '../../assets/icons/search.svg';
 import menu from '../../assets/icons/menu.svg';
 import user from '../../assets/icons/user.svg';
-import like from '../../assets/icons/like.svg';
 import cart from '../../assets/icons/cart.svg';
 import chevron from '../../assets/icons/chevron.svg';
 import s from './Header.module.scss';
@@ -13,6 +12,8 @@ import { openSidebar } from '../../store/actions/sidebar.actions';
 import { IDispatch } from '../../store/types/types';
 import { NavLink } from 'react-router-dom';
 import { PagesUrlsEnum } from '../../enums/pages-urls.enum';
+import { ProfileUrlsEnums } from '../../enums/profile-urls.enums';
+import { SmallCounter } from '../common/SmallCounter/SmallCounter';
 
 export const Header = (): JSX.Element => {
     const dispatch: IDispatch = useDispatch();
@@ -44,17 +45,13 @@ export const Header = (): JSX.Element => {
                     <div className={s.action}>
                         <img src={search} alt='Search' className={s.actionIcon} />
                     </div>
-                    <div className={s.action}>
-                        <img src={user} alt='User' className={s.actionIcon} />
-                    </div>
-                    <div className={clsx(s.action, s.actionLike)}>
-                        <img src={like} alt='Like' className={s.actionIcon} />
-                        <div className={s.counter}>0</div>
-                    </div>
-                    <div className={s.action}>
-                        <img src={cart} alt='Cart' className={s.actionIcon} />
-                        <div className={s.counter}>0</div>
-                    </div>
+                    <NavLink to={`${PagesUrlsEnum.Profile}/${ProfileUrlsEnums.Cart}`} className={s.action}>
+                        <img src={cart} alt='CartContainer' className={s.actionIcon} />
+                        <SmallCounter />
+                    </NavLink>
+                    <NavLink to={PagesUrlsEnum.Profile} className={s.action}>
+                        <img src={user} alt='SignIn' className={s.actionIcon} />
+                    </NavLink>
                 </div>
             </div>
         </header>

@@ -1,5 +1,5 @@
-import { IPerfumeType } from './perfume-type';
 import { ICommentsType } from './comments-type';
+import { ICategoryItem } from './category-item';
 
 export interface IProductItem {
     _id: string;
@@ -7,7 +7,7 @@ export interface IProductItem {
     isNovelty: boolean;
     name: string;
     fullPrise: number;
-    perfumeType: IPerfumeType;
+    perfumeType: ICategoryItem;
     image: string;
     amount: number;
     brand: string;
@@ -16,4 +16,5 @@ export interface IProductItem {
     description: string;
     gender: string;
     stars: number;
+    count: number;
 }

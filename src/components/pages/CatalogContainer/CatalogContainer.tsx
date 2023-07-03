@@ -8,13 +8,15 @@ import { ICategory } from '../../../models/category';
 import { selectFilters } from '../../../store/selectors/filters.selectors';
 import { ProductsParams } from '../../../models/products-params-type';
 import { toQueryString } from '../../../helpers/to-query-string';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Location, NavigateFunction, useLocation, useNavigate } from 'react-router-dom';
 import { fromQueryString } from '../../../helpers/from-query-string';
 import { IProductItem } from '../../../models/product-item';
 import { selectPage, selectPageCount, selectProducts, selectTotalCount } from '../../../store/selectors/products.selectors';
 
 export const CatalogContainer = (): JSX.Element => {
     const dispatch: IDispatch = useDispatch();
+    const navigate: NavigateFunction = useNavigate();
+    const location: Location = useLocation();
 
     const filters: ICategory[] = useSelector(selectFilters);
     const products: IProductItem[] = useSelector(selectProducts);
@@ -22,11 +24,9 @@ export const CatalogContainer = (): JSX.Element => {
     const pageCount: number = useSelector(selectPageCount);
     const page: number = useSelector(selectPage);
 
-    const navigate = useNavigate();
-    const location = useLocation();
-    const initialValues: ProductsParams = fromQueryString(location.search);
-
     const [param, setParam] = useState<ProductsParams>({});
+
+    const initialValues: ProductsParams = fromQueryString(location.search);
 
     const onFiltersChange = (params: ProductsParams): void => {
         navigate(toQueryString(params));

@@ -1,0 +1,52 @@
+@import 'src/variables';
+
+.profile {
+    width: 100%;
+}
+
+.outlet {
+    width: 100%;
+}
+
+.label {
+    margin-top: 0;
+}
+
+.content {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.sidebar {
+    flex-direction: column;
+    display: flex;
+    width: 250px;
+    border-top: 1px solid $light-gray;
+
+    @media screen and (max-width: $tablet) {
+        display: none;
+    }
+}
+
+.item {
+    align-items: center;
+    display: flex;
+    width: 100%;
+    height: 60px;
+    padding-left: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    color: black;
+    border-bottom: 1px solid $light-gray;
+    box-sizing: border-box;
+
+    &:hover {
+        background-color: $smoky-white;
+    }
+}
+
+.button {
+    width: 100%;
+    margin: 15px auto 0;
+}

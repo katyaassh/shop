@@ -14,7 +14,6 @@ interface IProps {
 
 export const PriceSlider = ({ nameMin, nameMax, ...props }: IProps): JSX.Element => {
     const priceSlider = usePriceSlider(nameMin, nameMax);
-
     const ref = useRef<HTMLDivElement>(null);
     useClickOutside(ref, () => priceSlider.setIsOpen(false));
 

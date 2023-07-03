@@ -12,13 +12,12 @@ interface IProps {
 
 export const PriceSorting = (props: IProps): JSX.Element => {
     const priceSorting = usePriceSorting(props.sort);
+    const ref = useRef<HTMLDivElement>(null);
+    useClickOutside(ref, () => priceSorting.setIsOpen(false));
 
     const onItemClick = (): void => {
         priceSorting.setIsOpen(false);
     };
-
-    const ref = useRef<HTMLDivElement>(null);
-    useClickOutside(ref, () => priceSorting.setIsOpen(false));
 
     return (
         <div className={s.priceSorting}>

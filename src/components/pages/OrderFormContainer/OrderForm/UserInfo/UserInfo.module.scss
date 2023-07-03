@@ -1,0 +1,43 @@
+@import 'src/variables';
+
+.userInfo {
+    justify-content: space-between;
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    margin-top: 15px;
+    border: 1px solid $smoky-white;
+    box-sizing: border-box;
+
+    @media screen and (max-width: $mobile) {
+        flex-direction: column;
+    }
+}
+
+.title {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.content {
+    flex-direction: column;
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.userName {
+    font-size: 18px;
+}
+
+.userText {
+    font-size: 14px;
+}
+
+.address {
+    margin-top: 15px;
+}
+
+.button {
+    margin: auto 0;
+}

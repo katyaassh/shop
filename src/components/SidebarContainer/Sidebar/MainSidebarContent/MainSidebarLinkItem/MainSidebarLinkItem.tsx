@@ -1,18 +1,21 @@
 import s from './MainSidebarLinkItem.module.scss';
 import React from 'react';
+import { NavLink } from 'react-router-dom';
+import { SmallCounter } from '../../../../common/SmallCounter/SmallCounter';
 
 interface IProps {
     title: string;
     icon?: string;
-    count?: number;
+    to: string;
+    hasCount?: boolean;
 }
 
 export const MainSidebarLinkItem = (props: IProps): JSX.Element => {
     return (
-        <div className={s.item}>
+        <NavLink to={props.to} className={s.item}>
             {props.icon && <img src={props.icon} alt='Icon' />}
             {props.title}
-            {props.count || props.count === 0 ? <div className={s.counter}>{props.count}</div> : null}
-        </div>
+            {props.hasCount && <SmallCounter />}
+        </NavLink>
     );
 };
